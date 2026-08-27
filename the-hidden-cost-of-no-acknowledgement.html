@@ -6,8 +6,10 @@
 <title>The Hidden Cost of No Acknowledgement &middot; Prabhanjan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 <style>
+
+
 
 
 
@@ -356,6 +358,98 @@ body[data-theme="detail"] { overflow: hidden; height: 100vh; height: 100dvh; }
 
 
 
+
+/* ---------- Article (full Words post) ---------- */
+.article-back {
+  display: inline-flex; align-items: center; min-height: 44px;
+  margin: 0.75rem 0 0.25rem; padding-right: 0.75rem;
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85rem;
+  color: var(--muted); text-decoration: none;
+}
+.article-back:hover { color: var(--accent); }
+.article-date {
+  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 1rem;
+}
+.article-figure { margin: 0 0 2.25rem; }
+.article-figure svg { width: 100%; height: auto; display: block; }
+
+.article-meta {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 1rem;
+}
+.article-meta .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
+.article-meta .readtime { color: var(--muted); }
+
+.lede-open {
+  font-family: 'Inter', sans-serif; font-weight: 600;
+  font-size: clamp(1.2rem, 3.2vw, 1.42rem); line-height: 1.45;
+  margin: 0 0 1.6rem; max-width: 44ch;
+}
+.beat {
+  font-family: 'Inter', sans-serif; font-weight: 400;
+  font-size: clamp(1.02rem, 2.6vw, 1.12rem); line-height: 1.45;
+  margin: 0 0 0.95rem; color: var(--fg);
+}
+.beat-hit {
+  font-family: 'Inter', sans-serif; font-weight: 800;
+  font-size: clamp(1.5rem, 4.5vw, 1.9rem); line-height: 1.2;
+  margin: 1.3rem 0; letter-spacing: -0.01em;
+}
+
+.thoughts { list-style: none; margin: 0 0 1.3rem; padding: 0 0 0 1.15rem; border-left: 2px solid var(--line); max-width: 56ch; }
+.thoughts li {
+  font-family: 'Inter', sans-serif; font-style: italic; font-weight: 400;
+  color: var(--muted); font-size: 1.02rem; line-height: 1.65; margin-bottom: 0.45rem;
+}
+
+.pull {
+  border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1.2rem;
+  margin: 2rem 0; max-width: 46ch;
+  font-family: 'Inter', sans-serif; font-weight: 700;
+  font-size: clamp(1.15rem, 3vw, 1.35rem); line-height: 1.45; color: var(--fg);
+}
+
+article h1 {
+  font-family: 'Inter', sans-serif; font-weight: 800; font-style: italic;
+  font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1.15; margin: 0 0 2rem;
+  letter-spacing: -0.01em; max-width: 22ch;
+}
+.article-lede p {
+  font-family: 'Inter', sans-serif; font-weight: 600; font-size: clamp(1.1rem, 2.6vw, 1.25rem);
+  line-height: 1.55; margin: 0 0 0.85rem; color: var(--fg);
+}
+article h2 {
+  font-family: 'Inter', sans-serif; font-weight: 700; font-size: clamp(1.3rem, 3.2vw, 1.6rem);
+  margin: 2.5rem 0 1rem; color: var(--fg);
+}
+article p {
+  font-family: 'Inter', sans-serif; font-weight: 400; font-size: 1.05rem;
+  line-height: 1.75; color: var(--fg); opacity: 0.9; margin: 0 0 1.1rem; max-width: 62ch;
+}
+article ol, article ul {
+  margin: 0 0 1.25rem; padding-left: 1.4rem; max-width: 60ch;
+}
+article ol li, article ul li {
+  font-family: 'Inter', sans-serif; font-size: 1.05rem; line-height: 1.7;
+  color: var(--fg); opacity: 0.9; margin-bottom: 0.5rem;
+}
+article strong { font-weight: 700; color: var(--accent); opacity: 1; }
+.article-footer {
+  margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line);
+}
+
+
+.article-callout {
+  font-family: 'Inter', sans-serif; font-weight: 700;
+  font-size: clamp(1.15rem, 3vw, 1.4rem); color: var(--accent);
+  margin: 0 0 1.4rem; line-height: 1.4;
+}
+
+
 </style>
 </head>
 <body data-theme="words">
@@ -376,25 +470,32 @@ body[data-theme="detail"] { overflow: hidden; height: 100vh; height: 100dvh; }
   <a href="words.html" class="article-back">&larr; Words</a>
 
   <article>
-    <div class="article-date">August 2026</div>
+    <div class="article-meta">
+      <span>August 2026</span>
+      <span class="sep"></span>
+      <span class="readtime">2 min read</span>
+    </div>
     <h1>The Hidden Cost of No Acknowledgement</h1>
 
-    <div class="article-lede">
-      <p>You post an update. You ask a question. You highlight a risk. You propose a direction.</p>
-      <p>And then&hellip;</p>
-      <p>Nothing.</p>
-      <p>No reply. No counterpoint. Not even a &#128077;.</p>
-      <p>That silence is not neutral. It creates ambiguity.</p>
-      <p>This is not about &ldquo;why communication is important&rdquo;. It&rsquo;s about what happens one step after communication &mdash; when there is no acknowledgement.</p>
+    <div class="article-figure">
+      <svg viewBox="0 0 480 262" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A message sent, and a reply that never arrived"><rect x="22" y="14" width="254" height="92" rx="16" fill="none" stroke="#2B2620" stroke-width="2"/><path d="M 224,106 L 254,126 L 252,106" fill="none" stroke="#2B2620" stroke-width="2" stroke-linejoin="round"/><line x1="48" y1="44" x2="250" y2="44" stroke="#2B2620" stroke-width="2" stroke-linecap="round" opacity="0.5"/><line x1="48" y1="64" x2="206" y2="64" stroke="#2B2620" stroke-width="2" stroke-linecap="round" opacity="0.5"/><line x1="48" y1="84" x2="141" y2="84" stroke="#2B2620" stroke-width="2" stroke-linecap="round" opacity="0.5"/><rect x="204" y="148" width="254" height="92" rx="16" fill="none" stroke="#8A7F6C" stroke-width="2" stroke-dasharray="5 7"/><path d="M 256,240 L 226,260 L 228,240" fill="none" stroke="#8A7F6C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 7"/><circle cx="299" cy="194" r="4" fill="#8A7F6C"/><circle cx="331" cy="194" r="4" fill="#8A7F6C"/><circle cx="363" cy="194" r="4" fill="#8A7F6C"/></svg>
     </div>
+
+    <p class="lede-open">You post an update. You ask a question. You highlight a risk. You propose a direction.</p>
+    <p class="beat">And then&hellip;</p>
+    <p class="beat-hit">Nothing.</p>
+    <p class="beat">No reply. No counterpoint. Not even a &#128077;.</p>
+    <p>That silence is not neutral. It creates ambiguity.</p>
+    <p>This is not about &lsquo;why communication is important&rsquo;. It&rsquo;s about what happens one step after communication - when there is no acknowledgement.</p>
 
     <p>When a message goes unanswered, two immediate doubts creep in:</p>
     <ol>
       <li>Did the message land? Was the context clear? Was it understood the way it was intended?</li>
       <li>Is there alignment? Are people onboard? Disagreeing silently? Ignoring it? Waiting?</li>
     </ol>
-    <p>Silence doesn&rsquo;t answer any of these. It creates a vacuum. And in a vacuum, assumptions grow.</p>
-    <ul>
+    <p>Silence doesn&rsquo;t answer any of these. It creates a vacuum.</p>
+    <p>And in a vacuum, assumptions grow.</p>
+    <ul class="thoughts">
       <li>&ldquo;Maybe they don&rsquo;t agree.&rdquo;</li>
       <li>&ldquo;Maybe this isn&rsquo;t important.&rdquo;</li>
       <li>&ldquo;Maybe I wasn&rsquo;t clear.&rdquo;</li>
@@ -406,7 +507,8 @@ body[data-theme="detail"] { overflow: hidden; height: 100vh; height: 100dvh; }
     <p>True!</p>
     <p>Some people process internally. Some respond later. Some assume &ldquo;no news is good news.&rdquo; Some believe acknowledgement is implied.</p>
     <p>But different styles cannot become an excuse for incomplete loops.</p>
-    <p>Professional communication has one simple responsibility: <strong>close the loop.</strong></p>
+    <p>Professional communication has one simple responsibility:</p>
+    <p class="article-callout">Close the loop!</p>
 
     <h2>A Simple Rule</h2>
     <p>Even if the answer is:</p>
@@ -419,9 +521,9 @@ body[data-theme="detail"] { overflow: hidden; height: 100vh; height: 100dvh; }
     <p>Silence is rarely the right strategy.</p>
 
     <h2>My Thought</h2>
-    <p>Unanswered messages don&rsquo;t just sit in a chat window. They sit in people&rsquo;s heads.</p>
+    <p class="pull">Unanswered messages don&rsquo;t just sit in a chat window. They sit in people&rsquo;s heads.</p>
     <p>And over time, what starts as a missed thumbs-up turns into a missed alignment.</p>
-    <p>Communication doesn&rsquo;t end when you hit &ldquo;send.&rdquo; It ends when the loop is closed.</p>
+    <p>Communication doesn&rsquo;t end when you hit &lsquo;send&rsquo;. It ends when the loop is closed.</p>
 
     <div class="article-footer">
       <a href="words.html" class="article-back">&larr; Back to Words</a>

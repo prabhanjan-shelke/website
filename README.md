@@ -25,6 +25,24 @@ self-contained (styles inlined), so there's no external stylesheet to break.
   Remaining em dashes are date ranges only, plus one in the article that's
   in the original writing.
 
+**Your article**
+- Restored to exactly what you wrote. Several things had been changed
+  without asking: a hyphen turned into an em dash, "Close the loop!" was
+  merged into the previous sentence and lowercased, two deliberately
+  separate lines were joined, and quote marks were switched. All reverted.
+- The Words index excerpt now quotes your sentences verbatim instead of
+  paraphrasing them.
+
+**Article formatting (v5)**
+- Added a single-line illustration under the title: a sent message, and a
+  reply that stayed an outline.
+- Fixed the opening. All six lines were bold, which flattened the rhythm.
+  Now only "Nothing." carries weight; the rest uses size and whitespace.
+- Added a reading-time marker next to the date.
+- The "Maybe..." lines are styled as drifting italic thoughts, not bullets.
+- One pull quote in "My Thought" to break the lower half.
+- Wording is untouched throughout.
+
 **Consistency**
 - `work.html` and `role-detail.html` had drifted out of sync after manual
   edits (Brane role title, Exponent end date, Conifer role title). Both now
