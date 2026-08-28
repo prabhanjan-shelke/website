@@ -43,6 +43,17 @@ self-contained (styles inlined), so there's no external stylesheet to break.
 - One pull quote in "My Thought" to break the lower half.
 - Wording is untouched throughout.
 
+**Contact footer**
+- Slim call-to-action footer on Home, Work, Words and the article:
+  "Let's talk." plus an Email me button and a LinkedIn button.
+- The primary button uses the page's accent, so it's brass on the dark
+  pages and plum on Words, with correct contrast either way.
+- Not on role-detail.html: that page is a fullscreen slide viewer with
+  scrolling disabled, so a footer would be unreachable there.
+- Phone number deliberately left off. A public page gets scraped
+  continuously; a mobile number tied to UPI/banking/OTP is a security
+  surface, not just a spam risk.
+
 **Consistency**
 - `work.html` and `role-detail.html` had drifted out of sync after manual
   edits (Brane role title, Exponent end date, Conifer role title). Both now
