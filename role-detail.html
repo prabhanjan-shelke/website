@@ -1,534 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script data-goatcounter="https://prabhanjanshelke.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Role detail &middot; Prabhanjan</title>
-  <meta name="description" content="A closer look at one role: how I got there, what I worked on, what I learned.">
+<title>Role detail &middot; Prabhanjan Shelke</title>
+<meta name="description" content="How I got the job, what I walked into, what I learned, and where I fell short.">
 <link rel="canonical" href="https://prabhanjanshelke.com/role-detail.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Prabhanjan Shelke">
-<meta property="og:title" content="Role detail · Prabhanjan Shelke">
-<meta property="og:description" content="A closer look at one role: how I got there, what I worked on, what I learned.">
+<meta property="og:title" content="Role detail &middot; Prabhanjan Shelke">
+<meta property="og:description" content="How I got the job, what I walked into, what I learned, and where I fell short.">
 <meta property="og:url" content="https://prabhanjanshelke.com/role-detail.html">
 <meta property="og:image" content="https://prabhanjanshelke.com/preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Role detail · Prabhanjan Shelke">
-<meta name="twitter:description" content="A closer look at one role: how I got there, what I worked on, what I learned.">
+<meta name="twitter:title" content="Role detail &middot; Prabhanjan Shelke">
+<meta name="twitter:description" content="How I got the job, what I walked into, what I learned, and where I fell short.">
 <meta name="twitter:image" content="https://prabhanjanshelke.com/preview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 
 
+:root{--brass:#C9A227;--plum:#6E3B4D}
+body[data-theme="work"],body[data-theme="home"],body[data-theme="detail"]{
+  --bg:#12151C;--bg-raise:#191D26;--fg:#E9E7E0;--muted:#8B96A5;--accent:var(--brass);--line:rgba(232,230,224,.12)}
+body[data-theme="words"]{--bg:#EAE2D4;--bg-raise:#E2D9C9;--fg:#2B2620;--muted:#8A7F6C;--accent:var(--plum);--line:rgba(43,38,32,.14)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;min-height:100vh}
+a{color:var(--accent)}
+.topnav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+  padding:2.1rem clamp(1.25rem,5vw,3.5rem) 1.5rem;background:var(--bg);border-bottom:1px solid var(--line)}
+.topnav .wordmark{font-weight:800;font-size:clamp(1.7rem,4.5vw,2.2rem);letter-spacing:-.02em;text-decoration:none;color:var(--fg)}
+.topnav .navlinks{display:flex;gap:clamp(1rem,3vw,2rem);font-weight:600;font-size:.85rem;letter-spacing:.06em}
+.topnav .navlinks a{text-decoration:none;color:var(--muted);padding-bottom:3px;border-bottom:1px solid transparent}
+.topnav .navlinks a:hover{color:var(--fg)}
+.topnav .navlinks a.current{color:var(--accent);border-bottom-color:var(--accent)}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;padding:0;background:none;border:none;cursor:pointer}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--fg);border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:560px){
+ .topnav{flex-wrap:wrap;padding:1.5rem clamp(1.1rem,5vw,3.5rem) 1.1rem}
+ .topnav .wordmark{font-size:clamp(1.45rem,7vw,1.8rem)}
+ .nav-toggle{display:flex}
+ .topnav .navlinks{display:none;width:100%;flex-direction:column;gap:0;margin-top:1.1rem;border-top:1px solid var(--line);font-size:.95rem}
+ .topnav .navlinks.open{display:flex}
+ .topnav .navlinks a{padding:.95rem 0;border-bottom:1px solid var(--line)}
+ .topnav .navlinks a.current{color:var(--accent);border-bottom-color:var(--line)}
+}
+main{max-width:1100px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2rem)}
+
+/* work index */
+.work-intro{padding:clamp(2.5rem,8vh,4rem) 0 1.5rem;max-width:640px}
+.work-intro h1{font-weight:800;font-size:clamp(2.3rem,6.5vw,3.2rem);margin:0 0 .75rem;letter-spacing:-.01em}
+.work-intro p{color:var(--muted);font-size:1rem;line-height:1.6;margin:0}
+.rolelist{display:flex;flex-direction:column;gap:1.25rem;padding:.5rem 0 3rem}
+.rolecard{display:flex;gap:1.5rem;align-items:center;text-decoration:none;color:inherit;
+  background:var(--bg-raise);border:1px solid var(--line);border-radius:10px;
+  padding:clamp(1.5rem,4vw,2.25rem);transition:border-color .2s ease,transform .2s ease}
+.rolecard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.rolecard .ico{width:clamp(52px,8vw,68px);height:clamp(52px,8vw,68px);flex-shrink:0;opacity:.85}
+.rolecard .ico svg{width:100%;height:100%}
+.rolecard .num{font-weight:700;font-size:.78rem;letter-spacing:.1em;color:var(--accent);display:block;margin-bottom:.4rem}
+.rolecard h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2rem);line-height:1.1;margin:0 0 .45rem;letter-spacing:-.02em}
+.rolecard .meta{font-size:.8rem;font-weight:500;color:var(--muted);margin-bottom:.7rem}
+.rolecard .sum{font-size:1rem;line-height:1.6;opacity:.9;margin:0;max-width:52ch}
+@media(max-width:560px){.rolecard{flex-direction:column;align-items:flex-start;gap:1rem}}
+
+/* split detail */
+.back{display:inline-flex;align-items:center;min-height:44px;font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;margin-top:1.25rem}
+.back:hover{color:var(--accent)}
+.split{display:flex;gap:clamp(2rem,5vw,4.5rem);align-items:flex-start;padding:1rem 0 5rem}
+.left{flex:0 0 300px;position:sticky;top:120px}
+.left .ico{width:60px;height:60px;opacity:.85;margin-bottom:1rem}
+.left .ico svg{width:100%;height:100%}
+.left .num{font-size:.78rem;font-weight:700;letter-spacing:.1em;color:var(--accent);display:block;margin-bottom:.5rem}
+.left h1{font-size:clamp(1.9rem,3.4vw,2.5rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin:0 0 .7rem}
+.left .meta{font-size:.82rem;font-weight:500;color:var(--muted);line-height:1.5;margin-bottom:1.1rem}
+.left .sum{font-size:1rem;line-height:1.6;opacity:.9;padding-top:1.1rem;border-top:1px solid var(--line)}
+.right{flex:1;min-width:0;max-width:62ch}
+.beat{margin-bottom:2.75rem}
+.beat .h{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.85rem}
+.beat p{font-size:1.05rem;line-height:1.75;opacity:.9;margin:0 0 1.1rem}
+.beat p:last-child{margin-bottom:0}
+.rolenav{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1.5rem;margin-top:1rem}
+.rolenav a{display:inline-flex;align-items:center;min-height:44px;font-size:.85rem;font-weight:600;color:var(--muted);text-decoration:none}
+.rolenav a:hover{color:var(--accent)}
+@media(max-width:820px){.split{flex-direction:column;gap:1.75rem}.left{position:static;flex:1 1 auto;width:100%}.right{max-width:none}}
+
+/* footer */
+.sitefoot{margin-top:clamp(3rem,8vh,4.5rem);border-top:1px solid var(--line)}
+.foot-inner{max-width:1100px;margin:0 auto;padding:2rem clamp(1.25rem,5vw,2rem) 2.75rem}
+.foot-cta{font-weight:800;font-size:clamp(1.5rem,4.5vw,2rem);letter-spacing:-.02em;margin:0 0 1.15rem;color:var(--fg)}
+.foot-actions{display:flex;gap:.7rem;flex-wrap:wrap}
+.foot-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 1.2rem;
+  border:1px solid var(--line);border-radius:6px;font-weight:600;font-size:.88rem;color:var(--fg);text-decoration:none}
+.foot-btn:hover{border-color:var(--accent)}
+.foot-btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:700}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 
-:root {
-  --brass: #C9A227;
-  --plum: #6E3B4D;
-  --radius: 3px;
-}
-
-body[data-theme="work"], body[data-theme="home"], body[data-theme="detail"] {
-  --bg: #12151C;
-  --bg-raise: #191D26;
-  --fg: #E9E7E0;
-  --muted: #8B96A5;
-  --accent: var(--brass);
-  --line: rgba(232, 230, 224, 0.12);
-}
-
-body[data-theme="words"] {
-  --bg: #EAE2D4;
-  --bg-raise: #E2D9C9;
-  --fg: #2B2620;
-  --muted: #8A7F6C;
-  --accent: var(--plum);
-  --line: rgba(43, 38, 32, 0.14);
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0; background: var(--bg); color: var(--fg);
-  font-family: 'Inter', sans-serif;
-  min-height: 100vh;
-}
-a { color: var(--accent); }
-
-/* ============ TYPE SCALE (Inter only, weight/size carry hierarchy) ============
-   Site title (nav wordmark) ... clamp(1.7rem, 4.5vw, 2.2rem)  / 800  <- most eye-catching, brand mark
-   Page H1 (hero headings)   ... clamp(2.3rem, 6.5vw, 3.2rem)  / 800
-   Role title (per-section)  ... clamp(2.8rem, 8vw, 4.4rem)    / 800  <- biggest single element on Work page
-   Card / post H2             ... 1.5rem                        / 700
-   Stat number                ... clamp(2.1rem, 5.5vw, 2.8rem) / 800
-   Headline / lede            ... clamp(1.1rem, 2.6vw, 1.3rem) / 500
-   Body                        ... 1rem                         / 400
-   Small label / eyebrow      ... 0.72rem                       / 700, uppercase, tracked
-   Meta / caption              ... 0.78rem                      / 500
-   Nav links                   ... 0.75rem                      / 600, uppercase, tracked
-================================================================================ */
-
-/* ---------- Top nav ---------- */
-.topnav {
-  position: sticky; top: 0; z-index: 50;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 2.1rem clamp(1.25rem, 5vw, 3.5rem) 1.5rem;
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
-}
-.topnav .wordmark {
-  font-family: 'Inter', sans-serif; font-weight: 800;
-  font-size: clamp(1.7rem, 4.5vw, 2.2rem);
-  letter-spacing: -0.02em; text-decoration: none; color: var(--fg);
-}
-.topnav .navlinks {
-  display: flex; gap: clamp(1rem, 3vw, 2rem);
-  font-family: 'Inter', sans-serif; font-weight: 600;
-  font-size: 0.85rem; letter-spacing: 0.06em;
-}
-.topnav .navlinks a {
-  text-decoration: none; color: var(--muted); padding-bottom: 3px;
-  border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease;
-}
-.topnav .navlinks a:hover { color: var(--fg); }
-.topnav .navlinks a.current { color: var(--accent); border-bottom-color: var(--accent); }
-
-/* hamburger button - hidden on desktop */
-.nav-toggle {
-  display: none; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
-  width: 44px; height: 44px; padding: 0; margin: 0;
-  background: none; border: none; cursor: pointer;
-}
-.nav-toggle span {
-  display: block; width: 24px; height: 2px; background: var(--fg); border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.2s ease;
-}
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* --- narrow screens: collapse nav behind the menu icon --- */
-@media (max-width: 560px) {
-  .topnav { flex-wrap: wrap; padding: 1.5rem clamp(1.1rem, 5vw, 3.5rem) 1.1rem; }
-  .topnav .wordmark { font-size: clamp(1.45rem, 7vw, 1.8rem); }
-  .nav-toggle { display: flex; }
-  .topnav .navlinks {
-    display: none; width: 100%; flex-direction: column; gap: 0;
-    margin-top: 1.1rem; border-top: 1px solid var(--line); font-size: 0.95rem;
-  }
-  .topnav .navlinks.open { display: flex; }
-  .topnav .navlinks a {
-    padding: 0.95rem 0; border-bottom: 1px solid var(--line); border-top: none;
-  }
-  .topnav .navlinks a.current { color: var(--accent); border-bottom-color: var(--line); }
-}
-
-main { max-width: 820px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 2rem); }
-
-/* ---------- Home page ---------- */
-.home-hero { padding: clamp(3rem, 10vh, 6rem) 0 0.5rem; }
-.home-eyebrow {
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem;
-  letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.25rem;
-}
-.home-hero h1 {
-  font-family: 'Inter', sans-serif; font-weight: 800;
-  font-size: clamp(2.3rem, 6.5vw, 3.2rem); line-height: 1.15; margin: 0 0 1.75rem;
-  letter-spacing: -0.01em; max-width: 14ch;
-}
-.home-hero .bio p {
-  font-family: 'Inter', sans-serif; font-weight: 400;
-  font-size: 1.05rem; line-height: 1.75; color: var(--fg); opacity: 0.9;
-  max-width: 58ch; margin: 0 0 1.25rem;
-}
-
-.home-links { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0 4rem; }
-@media (max-width: 560px) { .home-links { grid-template-columns: 1fr; } }
-.home-link-card {
-  display: block; text-decoration: none;
-  border: 1px solid var(--line); border-radius: 6px; padding: 1.75rem;
-  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
-}
-.home-link-card.work-card { background: rgba(201, 162, 39, 0.07); }
-.home-link-card.words-card { background: rgba(110, 59, 79, 0.16); }
-.home-link-card:hover { transform: translateY(-3px); }
-.home-link-card.work-card:hover { border-color: var(--brass); }
-.home-link-card.words-card:hover { border-color: var(--plum); }
-.home-link-card .tag {
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.09em;
-  text-transform: uppercase; display: block; margin-bottom: 0.6rem;
-}
-.home-link-card.work-card .tag { color: var(--brass); }
-.home-link-card.words-card .tag { color: var(--plum); }
-.home-link-card h2 {
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.5rem;
-  color: var(--fg); margin: 0 0 0.5rem; letter-spacing: -0.005em;
-}
-.home-link-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.5; margin: 0; font-weight: 400; }
-
-/* ---------- Work page ---------- */
-.work-intro { padding: clamp(2.5rem, 8vh, 4rem) 0 1.5rem; max-width: 640px; }
-.work-intro h1 {
-  font-family: 'Inter', sans-serif; font-weight: 800;
-  font-size: clamp(2.3rem, 6.5vw, 3.2rem); margin: 0 0 0.75rem; letter-spacing: -0.01em;
-}
-.work-intro p { color: var(--muted); font-size: 1rem; line-height: 1.6; margin: 0; font-weight: 400; }
-
-.role-scroll { display: flex; flex-direction: column; gap: 1.75rem; padding: 0.5rem 0 3rem; }
-
-.role-section {}
-
-.role-card {
-  background: var(--bg-raise);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: clamp(1.75rem, 5vw, 3rem);
-}
-
-.role-top { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
-.role-icon { width: clamp(60px, 10vw, 84px); height: clamp(60px, 10vw, 84px); flex-shrink: 0; opacity: 0.9; }
-.role-icon svg { width: 100%; height: 100%; }
-
-.role-heading .role-num {
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.78rem; color: var(--brass);
-  letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block;
-}
-.role-heading h2 {
-  font-family: 'Inter', sans-serif; font-weight: 800;
-  font-size: clamp(2.1rem, 6.5vw, 3.6rem); line-height: 1.08; margin: 0 0 0.7rem;
-  letter-spacing: -0.02em;
-}
-.role-meta {
-  font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.8rem; color: var(--muted);
-}
-
-.role-headline {
-  font-family: 'Inter', sans-serif; font-weight: 500;
-  font-size: clamp(1.1rem, 2.6vw, 1.3rem); color: var(--fg); opacity: 0.92;
-  max-width: 48ch; margin: 0 0 2rem; line-height: 1.5;
-}
-
-.role-block { margin-bottom: 1.5rem; }
-.role-block-label {
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.09em;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; display: block;
-}
-.role-block p {
-  font-family: 'Inter', sans-serif; font-weight: 400; font-size: 1rem; line-height: 1.6;
-  color: var(--fg); opacity: 0.88; margin: 0; max-width: 62ch;
-}
-.role-block ul { margin: 0; padding-left: 1.1rem; max-width: 62ch; }
-.role-block ul li {
-  font-family: 'Inter', sans-serif; font-weight: 400; font-size: 1rem; line-height: 1.6;
-  color: var(--fg); opacity: 0.88; margin-bottom: 0.5rem;
-}
-
-.role-stats { display: flex; flex-wrap: wrap; gap: clamp(1.5rem, 4vw, 2.5rem); margin: 0.5rem 0 2rem; }
-.role-stat {
-  display: flex; flex-direction: column; gap: 0.35rem;
-  padding-right: clamp(1.5rem, 4vw, 2.5rem);
-  border-right: 1px solid var(--line);
-}
-.role-stat:last-child { border-right: none; padding-right: 0; }
-.role-stat .num {
-  font-family: 'Inter', sans-serif; font-weight: 800;
-  font-size: clamp(2.1rem, 5.5vw, 2.8rem); line-height: 1; color: var(--brass);
-  letter-spacing: -0.02em;
-}
-.role-stat .label {
-  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.68rem; letter-spacing: 0.04em;
-  text-transform: uppercase; color: var(--muted); max-width: 16ch; line-height: 1.4;
-}
-
-.role-details-link {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.02em;
-  color: var(--brass); width: fit-content;
-  text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px;
-  padding: 0.95rem 0 0.85rem;
-}
-.role-details-link:hover { opacity: 0.8; }
-
-/* ---------- Words page ---------- */
-.words-intro { padding: clamp(2.5rem, 8vh, 4rem) 0 2rem; max-width: 640px; }
-.words-intro h1 {
-  font-family: 'Inter', sans-serif; font-weight: 800; font-style: italic;
-  font-size: clamp(2.3rem, 6.5vw, 3.2rem); margin: 0 0 0.75rem; letter-spacing: -0.01em;
-}
-.words-intro p { color: var(--muted); font-size: 1rem; line-height: 1.6; margin: 0; font-weight: 400; }
-
-.posts { display: flex; flex-direction: column; padding-bottom: 4rem; }
-.post { border-top: 1px solid var(--line); padding: 2.25rem 0; }
-.post:last-child { border-bottom: 1px solid var(--line); }
-.post-date {
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.09em;
-  color: var(--muted); margin-bottom: 0.5rem; text-transform: uppercase;
-}
-.post h2 {
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.5rem; margin: 0 0 0.6rem;
-  letter-spacing: -0.005em;
-}
-.post p { color: var(--fg); opacity: 0.82; line-height: 1.7; margin: 0; font-size: 1rem; font-weight: 400; }
-.post-link {
-  display: inline-block; margin-top: 0.4rem;
-  font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem;
-  text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px;
-  padding: 0.95rem 0 0.85rem;
-}
-
-/* ---------- Role detail (few-slide viewer) ---------- */
-body[data-theme="detail"] { overflow: hidden; height: 100vh; height: 100dvh; }
-.detail-topbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 20;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1.25rem clamp(1rem, 4vw, 2rem);
-  background: linear-gradient(var(--bg), transparent);
-}
-.detail-back {
-  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85rem; color: var(--muted);
-  text-decoration: none; letter-spacing: 0.03em;
-  display: inline-flex; align-items: center; min-height: 44px; padding-right: 0.75rem;
-}
-.detail-back:hover { color: var(--fg); }
-.detail-progress { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.05em; }
-
-.detail-track { height: 100vh; height: 100dvh; position: relative; }
-.detail-slide {
-  position: absolute; inset: 0; display: none; flex-direction: column;
-  overflow-y: auto; -webkit-overflow-scrolling: touch;
-  padding: clamp(5rem, 12vh, 7rem) clamp(3.5rem, 11vw, 4rem) clamp(4.5rem, 10vh, 6rem);
-}
-.detail-slide.showing { display: flex; animation: dfade 0.4s ease; }
-@keyframes dfade { from { opacity:0; transform:translateY(8px);} to {opacity:1; transform:translateY(0);} }
-.detail-slide-inner { max-width: 640px; width: 100%; margin: auto; }
-
-.detail-cover .role-icon { width: clamp(84px,16vw,120px); height: clamp(84px,16vw,120px); margin: 0 auto 1.75rem; }
-.detail-cover { text-align: center; }
-.detail-cover .role-num { font-family:'Inter',sans-serif; font-weight:700; font-size:0.8rem; color:var(--brass); letter-spacing:0.12em; }
-.detail-cover h1 {
-  font-family:'Inter',sans-serif; font-weight:800; font-size: clamp(2rem,7vw,3.4rem);
-  line-height: 1.1; margin: 0.6rem 0 0.85rem; letter-spacing: -0.015em;
-}
-.detail-cover .role-meta { justify-content:center; }
-.detail-cover .role-headline { margin: 1.25rem auto 0; }
-
-.detail-content .role-block-label { font-size: 0.78rem; }
-.detail-content ul { padding-left: 1.2rem; }
-.detail-content ul li {
-  font-family:'Inter',sans-serif; font-weight: 400; font-size: clamp(1.05rem,2.6vw,1.25rem);
-  line-height:1.6; margin-bottom:0.85rem; color: var(--fg); opacity:0.9;
-}
-.detail-content .role-metrics { margin-top: 1.5rem; }
-
-.detail-end { text-align: center; }
-.detail-end h2 {
-  font-family:'Inter',sans-serif; font-weight:700; font-style: italic;
-  font-size: clamp(1.5rem,4vw,2.1rem); color: var(--muted); margin: 0 0 2rem;
-}
-.detail-end-actions { display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center; }
-
-.detail-nav-zone { position:absolute; top:0; bottom:0; width:15%; cursor:pointer; z-index:5; }
-.detail-nav-zone.left{left:0;} .detail-nav-zone.right{right:0;}
-.detail-nav-arrow {
-  position:absolute; top:50%; transform:translateY(-50%);
-  width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:var(--bg-raise);
-  color:var(--muted); display:flex; align-items:center; justify-content:center; font-size:1rem; z-index:6; cursor:pointer;
-}
-.detail-nav-arrow:hover{border-color:var(--brass); color:var(--brass);}
-.detail-nav-arrow.prev{left:clamp(0.5rem,2vw,1.5rem);} .detail-nav-arrow.next{right:clamp(0.5rem,2vw,1.5rem);}
-.detail-nav-arrow.hidden-arrow{opacity:0; pointer-events:none;}
-
-.detail-dots { position:absolute; bottom:1.5rem; left:0; right:0; display:flex; justify-content:center; gap:0.4rem; z-index:6; }
-.detail-dots .dot { width:6px; height:6px; border-radius:50%; background:var(--line); }
-.detail-dots .dot.on { background:var(--brass); transform:scale(1.3); }
-
-.role-metrics { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; padding: 0; margin: 0; }
-.role-metrics li {
-  font-size: 0.82rem; color: var(--muted); font-family: 'Inter', sans-serif; font-weight: 400;
-  border: 1px solid var(--line); border-radius: 3px; padding: 0.3rem 0.65rem;
-}
-.role-metrics .metric { color: var(--brass); font-weight: 700; margin-right: 0.35rem; }
-
-.end-btn {
-  all: unset; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.78rem;
-  letter-spacing: 0.03em; padding: 0.75rem 1.25rem;
-  border: 1px solid var(--line); border-radius: 3px; color: var(--fg);
-}
-.end-btn:hover { border-color: var(--brass); }
-.end-btn.primary { border-color: var(--brass); color: var(--brass); }
-
-@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
-
-
-
-
+/* ---- home ---- */
+.home-hero{padding:clamp(3rem,10vh,5.5rem) 0 0.5rem;max-width:760px}
+.home-eyebrow{font-weight:700;font-size:.8rem;letter-spacing:.11em;color:var(--accent);
+  text-transform:uppercase;margin-bottom:1.1rem}
+.home-hero h1{font-weight:800;font-size:clamp(2.1rem,6vw,3.1rem);line-height:1.12;
+  margin:0 0 1.9rem;letter-spacing:-.02em;max-width:19ch}
+.home-hero .bio p{font-size:1.06rem;line-height:1.78;opacity:.9;max-width:60ch;margin:0 0 1.3rem}
+.home-hero .bio p.last{opacity:.75;font-size:1rem;padding-top:.4rem}
+.home-links{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2.5rem 0 1rem}
+@media(max-width:560px){.home-links{grid-template-columns:1fr}}
+.home-link-card{display:block;text-decoration:none;border:1px solid var(--line);
+  border-radius:8px;padding:1.75rem;transition:border-color .25s ease,transform .25s ease}
+.home-link-card:hover{transform:translateY(-3px)}
+.home-link-card.work-card{background:rgba(201,162,39,.07)}
+.home-link-card.work-card:hover{border-color:var(--brass)}
+.home-link-card.words-card{background:rgba(110,59,79,.16)}
+.home-link-card.words-card:hover{border-color:var(--plum)}
+.home-link-card .tag{font-weight:700;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  display:block;margin-bottom:.6rem}
+.home-link-card.work-card .tag{color:var(--brass)}
+.home-link-card.words-card .tag{color:var(--plum)}
+.home-link-card h2{font-weight:700;font-size:1.4rem;color:var(--fg);margin:0 0 .5rem;letter-spacing:-.005em}
+.home-link-card p{color:var(--muted);font-size:.93rem;line-height:1.55;margin:0}
 
 </style>
 </head>
 <body data-theme="detail">
 
-<div class="detail-topbar">
-  <a href="work.html" class="detail-back" id="back-link">&larr; Back to Work</a>
-  <span class="detail-progress" id="progress-label"></span>
-</div>
+<nav class="topnav">
+  <a href="index.html" class="wordmark">PRABHANJAN</a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="navlinks" id="navlinks">
+    <a href="index.html">HOME</a>
+    <a href="work.html" class="current">WORK</a>
+    <a href="words.html">WORDS</a>
+  </div>
+</nav>
 
-<div class="detail-track" id="detail-track"></div>
+<main>
+  <a href="work.html" class="back">&larr; Work</a>
+  <div class="split">
+    <div class="left" id="left"></div>
+    <div class="right" id="right"></div>
+  </div>
+  <div class="rolenav" id="rolenav"></div>
+</main>
+
+<footer class="sitefoot"><div class="foot-inner">
+<h3 class="foot-cta">Let&rsquo;s talk.</h3><div class="foot-actions">
+<a class="foot-btn primary" href="mailto:prabhanjanshelke@gmail.com">Email me</a>
+<a class="foot-btn" href="https://www.linkedin.com/in/shelkeprabhanjan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+</div></div></footer>
 
 <script>
-const ROLES = [{"num": "I", "title": "Running the Floor", "role": "Assistant Manager", "company": "Godrej &amp; Boyce Mfg Co Ltd", "dates": "Feb 2021 &mdash; Dec 2021", "headline": "Ran daily press-shop planning for a stator/rotor line and pushed machine utilization past 95%.", "metrics": [["95%+", "machine utilization achieved"], ["100+", "workmen coordinated across 3 supervisors"], ["10+", "stator/rotor categories planned across"]], "icon": "<path d=\"M 350.0,200.0 L 349.3,189.9 L 348.0,179.9 L 345.9,170.0 L 343.2,160.3 L 339.9,150.9 L 336.0,141.7 L 331.4,132.8 L 326.3,124.2 L 320.6,116.1 L 314.4,108.3 L 307.7,101.1 L 300.6,94.3 L 293.0,88.0 L 285.0,82.2 L 276.7,77.1 L 268.0,72.5 L 259.1,68.5 L 250.0,65.1 L 240.7,62.3 L 231.2,60.2 L 221.7,58.8 L 212.1,58.0 L 202.5,57.8 L 192.9,58.3 L 183.4,59.5 L 174.0,61.3 L 164.8,63.7 L 155.8,66.7 L 147.0,70.3 L 138.5,74.5 L 130.3,79.2 L 122.5,84.4 L 115.1,90.2 L 108.1,96.4 L 101.6,103.1 L 95.5,110.2 L 90.0,117.7 L 85.0,125.5 L 80.5,133.6 L 76.6,141.9 L 73.3,150.5 L 70.5,159.3 L 68.4,168.2 L 66.9,177.2 L 66.0,186.3 L 65.7,195.4 L 66.1,204.4 L 67.0,213.4 L 68.5,222.3 L 70.7,231.0 L 73.4,239.6 L 76.7,247.9 L 80.5,256.0 L 84.8,263.8 L 89.7,271.2 L 95.0,278.3 L 100.8,285.0 L 107.0,291.2 L 113.6,297.1 L 120.6,302.4 L 127.8,307.2 L 135.4,311.6 L 143.3,315.4 L 151.3,318.6 L 159.5,321.3 L 167.9,323.5 L 176.4,325.0 L 184.9,326.0 L 193.4,326.4 L 202.0,326.2 L 210.5,325.4 L 218.9,324.1 L 227.1,322.2 L 235.2,319.8 L 243.1,316.8 L 250.7,313.3 L 258.1,309.3 L 265.2,304.9 L 271.9,300.0 L 278.3,294.6 L 284.2,288.9 L 289.8,282.8 L 294.9,276.3 L 299.6,269.5 L 303.7,262.5 L 307.4,255.2 L 310.6,247.7 L 313.2,240.0 L 315.3,232.1 L 316.9,224.2 L 317.9,216.2 L 318.4,208.2 L 318.4,200.2 L 317.8,192.2 L 316.7,184.3 L 315.0,176.6 L 312.8,168.9 L 310.1,161.5 L 307.0,154.3 L 303.4,147.3 L 299.3,140.7 L 294.8,134.3 L 289.8,128.3 L 284.5,122.6 L 278.9,117.3 L 272.9,112.4 L 266.6,108.0 L 260.1,104.0 L 253.3,100.4 L 246.3,97.4 L 239.2,94.8 L 231.9,92.7 L 224.5,91.1 L 217.1,90.1 L 209.6,89.5 L 202.1,89.5 L 194.6,89.9 L 187.3,90.9 L 180.0,92.3 L 172.8,94.2 L 165.9,96.6 L 159.1,99.5 L 152.6,102.8 L 146.3,106.5 L 140.3,110.6 L 134.6,115.1 L 129.2,120.0 L 124.2,125.2 L 119.6,130.7 L 115.4,136.5 L 111.6,142.5 L 108.2,148.8 L 105.3,155.2 L 102.8,161.9 L 100.7,168.6 L 99.2,175.5 L 98.1,182.4 L 97.5,189.3 L 97.3,196.3 L 97.7,203.2 L 98.4,210.1 L 99.7,216.9 L 101.4,223.5 L 103.5,230.0 L 106.1,236.3 L 109.1,242.4 L 112.4,248.3 L 116.2,253.9 L 120.3,259.3 L 124.7,264.3 L 129.5,269.0 L 134.5,273.3 L 139.8,277.3 L 145.4,280.9 L 151.1,284.1 L 157.1,286.9 L 163.2,289.3 L 169.4,291.3 L 175.7,292.8 L 182.1,293.9 L 188.5,294.6 L 194.9,294.8 L 201.3,294.6 L 207.7,293.9 L 214.0,292.9 L 220.1,291.4 L 226.1,289.5 L 232.0,287.2 L 237.7,284.5 L 243.1,281.5 L 248.4,278.1 L 253.3,274.4 L 258.0,270.3 L 262.4,266.0 L 266.5,261.4 L 270.2,256.6 L 273.6,251.5 L 276.6,246.3 L 279.2,240.8 L 281.5,235.3 L 283.4,229.6 L 284.8,223.8 L 285.9,217.9 L 286.6,212.0 L 286.9,206.2 L 286.8,200.3 L 286.2,194.4 L 285.3,188.7 L 284.0,183.0 L 282.4,177.5 L 280.3,172.1 L 278.0,166.8 L 275.2,161.8 L 272.2,157.0 L 268.9,152.4 L 265.2,148.1 L 261.3,144.0 L 257.2,140.3 L 252.8,136.8 L 248.2,133.7 L 243.4,130.8 L 238.5,128.4 L 233.4,126.2 L 228.3,124.5 L 223.0,123.1 L 217.7,122.0 L 212.3,121.3 L 207.0,121.0 L 201.6,121.1 L 196.3,121.5 L 191.0,122.3 L 185.9,123.4 L 180.8,124.8 L 175.9,126.6 L 171.1,128.7 L 166.5,131.1 L 162.1,133.9 L 157.9,136.8 L 154.0,140.1 L 150.3,143.6 L 146.8,147.3 L 143.6,151.2 L 140.7,155.4 L 138.2,159.7 L 135.9,164.1 L 133.9,168.6 L 132.3,173.3 L 130.9,178.0 L 129.9,182.8 L 129.3,187.7 L 128.9,192.5 L 128.9,197.3 L 129.3,202.1 L 129.9,206.8 L 130.9,211.5 L 132.1,216.1 L 133.7,220.5 L 135.5,224.8 L 137.7,229.0 L 140.1,233.0 L 142.7,236.7 L 145.6,240.3 L 148.7,243.7 L 152.0,246.8 L 155.5,249.7 L 159.2,252.3 L 163.0,254.7 L 166.9,256.7 L 171.0,258.5 L 175.1,260.1 L 179.3,261.3 L 183.6,262.2 L 187.9,262.8 L 192.2,263.2 L 196.5,263.2 L 200.8,263.0 L 205.0,262.4 L 209.2,261.6 L 213.2,260.5 L 217.2,259.2 L 221.0,257.5 L 224.7,255.7 L 228.3,253.6 L 231.6,251.3 L 234.8,248.7 L 237.8,246.0 L 240.6,243.1 L 243.2,240.0 L 245.5,236.8 L 247.6,233.5 L 249.5,230.0 L 251.1,226.4 L 252.4,222.8 L 253.5,219.1 L 254.4,215.3 L 255.0,211.6 L 255.3,207.8 L 255.3,204.0 L 255.1,200.3 L 254.7,196.6 L 254.0,192.9 L 253.1,189.4 L 251.9,185.9 L 250.5,182.5 L 248.9,179.3 L 247.1,176.2 L 245.1,173.2 L 242.9,170.5 L 240.5,167.8 L 238.0,165.4 L 235.4,163.2 L 232.6,161.1 L 229.7,159.3 L 226.7,157.7 L 223.6,156.3 L 220.5,155.1 L 217.3,154.1 L 214.0,153.4 L 210.8,152.9 L 207.5,152.6 L 204.3,152.5 L 201.0,152.7 L 197.9,153.1 L 194.7,153.7 L 191.7,154.5 L 188.7,155.4 L 185.8,156.6 L 183.1,158.0 L 180.4,159.5 L 177.9,161.3 L 175.5,163.1 L 173.3,165.1 L 171.2,167.3 L 169.3,169.5 L 167.6,171.9 L 166.0,174.3 L 164.7,176.9 L 163.5,179.5 L 162.5,182.1 L 161.7,184.8 L 161.1,187.6 L 160.7,190.3 L 160.4,193.0 L 160.4,195.8 L 160.5,198.4 L 160.9,201.1 L 161.4,203.7 L 162.0,206.3 L 162.9,208.7 L 163.9,211.1 L 165.0,213.4 L 166.3,215.6 L 167.7,217.7 L 169.3,219.6 L 171.0,221.4 L 172.7,223.1 L 174.6,224.7 L 176.6,226.1 L 178.6,227.3 L 180.7,228.5 L 182.8,229.4 L 185.0,230.2 L 187.2,230.8 L 189.4,231.3 L 191.6,231.6 L 193.8,231.8 L 196.0,231.8 L 198.2,231.6 L 200.3,231.3 L 202.4,230.9 L 204.5,230.3 L 206.4,229.6 L 208.3,228.8 L 210.1,227.9 L 211.8,226.8 L 213.5,225.6 L 215.0,224.4 L 216.4,223.0 L 217.7,221.6 L 218.9,220.1 L 220.0,218.6 L 220.9,217.0 L 221.7,215.3 L 222.4,213.6 L 223.0,211.9 L 223.4,210.2 L 223.7,208.5 L 223.9,206.8 L 224.0,205.1 L 224.0,203.4 L 223.8,201.8 L 223.5,200.1 L 223.1,198.6 L 222.7,197.1 L 222.1,195.6 L 221.4,194.2 L 220.6,192.9 L 219.8,191.7 L 218.9,190.5 L 217.9,189.4 L 216.9,188.4 L 215.8,187.5 L 214.7,186.7 L 213.5,186.0 L 212.3,185.4 L 211.1,184.9 L 209.8,184.4 L 208.6,184.1 L 207.4,183.9 L 206.2,183.7 L 204.9,183.7 L 203.7,183.7 L 202.6,183.8 L 201.5,184.0 L 200.4,184.3 L 199.3,184.7 L 198.3,185.1 L 197.4,185.6 L 196.5,186.1 L 195.7,186.7\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"200\" cy=\"200\" r=\"3.5\" fill=\"#C9A227\"/><line x1=\"356.0\" y1=\"200.0\" x2=\"364.0\" y2=\"200.0\" stroke=\"#8B96A5\" stroke-width=\"1.4\"/><line x1=\"200.0\" y1=\"44.0\" x2=\"200.0\" y2=\"36.0\" stroke=\"#8B96A5\" stroke-width=\"1.4\"/><line x1=\"44.0\" y1=\"200.0\" x2=\"36.0\" y2=\"200.0\" stroke=\"#8B96A5\" stroke-width=\"1.4\"/><line x1=\"200.0\" y1=\"356.0\" x2=\"200.0\" y2=\"364.0\" stroke=\"#8B96A5\" stroke-width=\"1.4\"/>", "slides": [{"label": "How I Got Here", "type": "para", "text": "Joined through campus placement, into Lawkim Motors as a production engineer in the stamping (press) shop."}, {"label": "What I Worked On", "type": "list", "items": ["Owned monthly production planning for the stator/rotor lamination line, translating marketing&rsquo;s demand numbers into machine assignments and steel purchase orders", "Ran the shop&rsquo;s response to machine breakdowns, working directly with maintenance to cut downtime", "Evaluated and selected a laser welding machine for a new export customer, from supplier visits in Gujarat through final sign-off"]}, {"label": "Key Learnings", "type": "list", "items": ["The difference between a &ldquo;result-driven&rdquo; culture and a &ldquo;solution-driven&rdquo; one, and how to still deliver inside the former", "Good technical decisions come from gathering the right data and being willing to commit to a call, not from having the deepest domain expertise", "You earn credibility with people decades more experienced by being useful, not by pulling rank"]}]}, {"num": "II", "title": "Zero to Structure", "role": "Strategic Sourcing &rarr; Program Manager", "company": "Exponent Energy", "dates": "May 2022 &mdash; Dec 2023", "headline": "Took Exponent&rsquo;s hardware supply chain from startup chaos to a system that could ship at volume.", "metrics": [["60%", "battery pack cost reduced"], ["300&rarr;50", "BOM line items consolidated"], ["0&rarr;100", "battery packs/month in production"], ["20+", "supplier partnerships built"]], "icon": "<path d=\"M 124.0,80.0 H 296.0 A 14,14 0 0 1 310.0,94.0 V 326.0 A 14,14 0 0 1 296.0,340.0 H 124.0 A 14,14 0 0 1 110.0,326.0 V 94.0 A 14,14 0 0 1 124.0,80.0 Z\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"143.3\" y1=\"96.0\" x2=\"143.3\" y2=\"324.0\" stroke=\"#F2EEE4\" stroke-width=\"0.84\" opacity=\"0.55\"/><line x1=\"176.7\" y1=\"96.0\" x2=\"176.7\" y2=\"324.0\" stroke=\"#F2EEE4\" stroke-width=\"0.84\" opacity=\"0.55\"/><line x1=\"210.0\" y1=\"96.0\" x2=\"210.0\" y2=\"324.0\" stroke=\"#F2EEE4\" stroke-width=\"0.84\" opacity=\"0.55\"/><line x1=\"243.3\" y1=\"96.0\" x2=\"243.3\" y2=\"324.0\" stroke=\"#F2EEE4\" stroke-width=\"0.84\" opacity=\"0.55\"/><line x1=\"276.7\" y1=\"96.0\" x2=\"276.7\" y2=\"324.0\" stroke=\"#F2EEE4\" stroke-width=\"0.84\" opacity=\"0.55\"/><rect x=\"196\" y=\"66.0\" width=\"28\" height=\"14\" rx=\"2\" fill=\"none\" stroke=\"#C9A227\" stroke-width=\"1.4\"/><circle cx=\"210\" cy=\"73.0\" r=\"2.2\" fill=\"#C9A227\"/>", "slides": [{"label": "How I Got Here", "type": "para", "text": "Referred in by a friend from my Formula Student team; started hands-on as a build engineer before moving into fulfillment, sourcing, then program management."}, {"label": "What I Worked On", "type": "list", "items": ["Built early production batteries by hand, among the first ~20 packs Exponent ever shipped", "Took fulfillment and logistics from ad hoc to owned, across multiple states and languages", "Rebuilt sourcing around 20+ supplier partnerships instead of chasing single parts, consolidating 300+ BOM line items into ~50 sub-assemblies", "Owned end-to-end product lifecycle across battery pack, charging station, connector, and BMS"]}, {"label": "Key Learnings", "type": "list", "items": ["Sourcing is a partnership problem, not a procurement problem", "Early-stage companies need process before they need more people. Most of the impact here came from structure, not headcount", "You can go from individual contributor to owning a whole functional area faster than you'd expect, if you carry context nobody else has"]}]}, {"num": "III", "title": "On Schedule, No Exceptions", "role": "Product Program Manager", "company": "Brane Group", "dates": "Jan 2024 &mdash; Sep 2024", "headline": "Delivered on-schedule releases for 40+ customers inside a fixed scope, team, and timeline. No room to renegotiate any of the three.", "metrics": [["40+", "customer release timelines optimized"], ["400+", "team structured for output"]], "icon": "<circle cx=\"210\" cy=\"210\" r=\"145\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\"/><line x1=\"210.0\" y1=\"81.0\" x2=\"210.0\" y2=\"67.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"339.0\" y1=\"210.0\" x2=\"353.0\" y2=\"210.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"210.0\" y1=\"339.0\" x2=\"210.0\" y2=\"353.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"81.0\" y1=\"210.0\" x2=\"67.0\" y2=\"210.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"210\" y1=\"210\" x2=\"151.0\" y2=\"168.7\" stroke=\"#F2EEE4\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"210\" y1=\"210\" x2=\"303.5\" y2=\"156.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><circle cx=\"210\" cy=\"210\" r=\"4\" fill=\"#C9A227\"/>", "slides": [{"label": "How I Got Here", "type": "para", "text": "Sought out remote work after Exponent; interviewed directly with the CTO in an unconventional whiteboard, group-format interview."}, {"label": "What I Worked On", "type": "list", "items": ["Managed release cycles for a low-code/no-code platform serving 40+ global customers, under fixed scope and timeline", "Coordinated QA, Dev, Product, and Customer teams to keep releases shipping on schedule", "Restructured a 400-person engineering org for clearer ownership and output"]}, {"label": "Key Learnings", "type": "list", "items": ["First exposure to software release cycles after years in hardware. The rhythm and the constraints are nothing like a factory floor", "&ldquo;Circle of concern&rdquo; in practice means spending energy only where you have leverage", "Empathy as a functional leadership tool, not a soft add-on"]}]}, {"num": "IV", "title": "Scale", "role": "Business Partnerships &rarr; Program Manager", "company": "Exponent Energy", "dates": "Sep 2024 &mdash; Sep 2025", "headline": "Took charging network partnerships from relationships into structured process.", "metrics": [["25+", "new locations enabled via 2 strategic partnerships"], ["4", "operational systems built from scratch"]], "icon": "<line x1=\"95\" y1=\"320\" x2=\"180\" y2=\"270\" stroke=\"#F2EEE4\" stroke-width=\"1.5\" opacity=\"0.85\"/><line x1=\"180\" y1=\"270\" x2=\"260\" y2=\"205\" stroke=\"#F2EEE4\" stroke-width=\"1.5\" opacity=\"0.85\"/><line x1=\"260\" y1=\"205\" x2=\"325\" y2=\"130\" stroke=\"#F2EEE4\" stroke-width=\"1.5\" opacity=\"0.85\"/><line x1=\"343\" y1=\"112\" x2=\"370\" y2=\"85\" stroke=\"#8B96A5\" stroke-width=\"1.25\" stroke-dasharray=\"1 6\" stroke-linecap=\"round\"/><circle cx=\"95\" cy=\"320\" r=\"9\" fill=\"none\" fill-opacity=\"0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\"/><circle cx=\"180\" cy=\"270\" r=\"13\" fill=\"none\" fill-opacity=\"0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\"/><circle cx=\"260\" cy=\"205\" r=\"18\" fill=\"none\" fill-opacity=\"0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\"/><circle cx=\"325\" cy=\"130\" r=\"24\" fill=\"#C9A227\" fill-opacity=\"1\" stroke=\"#C9A227\" stroke-width=\"1.75\"/>", "slides": [{"label": "How I Got Here", "type": "para", "text": "Reconnected with a former founder after stepping back from software; rejoined on the business side."}, {"label": "What I Worked On", "type": "list", "items": ["Built four operational systems from scratch: a customer-complaint ticketing system, a pump breakdown tracker, a bug tracker, and a lead management platform", "Analyzed utilization, deployment timelines, and partner performance using Excel, Superset, and custom dashboards to guide execution", "Owned P&amp;L and cash flow for the charging network, alongside partnerships and account management", "Coordinated with electricity boards and PSUs for regulatory alignment on network deployment"]}, {"label": "Key Learnings", "type": "list", "items": ["Building ticketing, tracking, and lead management from scratch is a different skill from configuring someone else's template", "Two well-chosen partnerships, with CPOs and real estate developers, opened more doors (25+ new locations) than manual site-by-site outreach ever could", "Process instincts transfer across functions. I kept getting pulled into program work even while formally on the business team"]}]}, {"num": "V", "title": "Now", "role": "Program Management Lead", "company": "Conifer", "dates": "Oct 2025 &mdash; Present", "headline": "Driving full product lifecycle at an early-stage, onshored powertrain company.", "metrics": [], "icon": "<path d=\"M 320.0,210.0 L 319.3,206.9 L 318.1,203.9 L 316.2,200.9 L 313.7,197.9 L 310.6,195.1 L 306.9,192.3 L 302.7,189.6 L 297.9,187.1 L 292.7,184.6 L 287.0,182.3 L 280.8,180.2 L 274.3,178.2 L 267.3,176.4 L 260.0,174.7 L 252.5,173.2 L 244.6,171.9 L 236.5,170.8 L 228.3,169.9 L 219.9,169.2 L 211.4,168.7 L 202.8,168.4 L 194.3,168.4 L 185.7,168.5 L 177.3,168.8 L 168.9,169.3 L 160.7,170.0 L 152.7,170.9 L 144.9,172.0 L 137.3,173.3 L 130.1,174.7 L 123.2,176.3 L 116.6,178.1 L 110.5,180.0 L 104.8,182.0 L 99.5,184.2 L 94.7,186.5 L 90.4,188.8 L 86.6,191.3 L 83.3,193.8 L 80.6,196.5 L 78.4,199.1 L 76.8,201.8 L 75.7,204.5 L 75.2,207.3 L 75.2,210.0 L 75.9,212.7 L 77.0,215.4 L 78.8,218.0 L 81.0,220.6 L 83.8,223.1 L 87.0,225.6 L 90.8,227.9 L 95.0,230.2 L 99.6,232.3 L 104.7,234.3 L 110.1,236.2 L 115.9,238.0 L 122.1,239.6 L 128.5,241.0 L 135.2,242.3 L 142.1,243.4 L 149.2,244.4 L 156.4,245.1 L 163.8,245.7 L 171.3,246.2 L 178.7,246.4 L 186.3,246.5 L 193.7,246.3 L 201.1,246.1 L 208.5,245.6 L 215.6,244.9 L 222.6,244.1 L 229.4,243.2 L 236.0,242.1 L 242.3,240.8 L 248.3,239.4 L 254.0,237.8 L 259.3,236.2 L 264.3,234.4 L 268.8,232.5 L 273.0,230.5 L 276.7,228.4 L 279.9,226.3 L 282.8,224.0 L 285.1,221.8 L 286.9,219.5 L 288.3,217.1 L 289.2,214.7 L 289.6,212.4 L 289.5,210.0 L 288.9,207.6 L 287.9,205.3 L 286.3,203.0 L 284.3,200.8 L 281.9,198.6 L 279.0,196.5 L 275.8,194.5 L 272.1,192.6 L 268.0,190.7 L 263.6,189.0 L 258.9,187.4 L 253.9,185.9 L 248.5,184.5 L 243.0,183.3 L 237.2,182.2 L 231.2,181.3 L 225.1,180.4 L 218.9,179.8 L 212.5,179.3 L 206.1,179.0 L 199.7,178.8 L 193.2,178.7 L 186.8,178.8 L 180.4,179.1 L 174.2,179.5 L 168.1,180.1 L 162.1,180.8 L 156.3,181.6 L 150.7,182.6 L 145.3,183.7 L 140.2,184.9 L 135.4,186.2 L 130.9,187.7 L 126.7,189.2 L 122.9,190.8 L 119.4,192.6 L 116.3,194.3 L 113.5,196.2 L 111.2,198.1 L 109.2,200.0 L 107.7,202.0 L 106.6,204.0 L 105.9,206.0 L 105.6,208.0 L 105.8,210.0 L 106.3,212.0 L 107.2,214.0 L 108.6,215.9 L 110.3,217.8 L 112.4,219.6 L 114.9,221.4 L 117.7,223.1 L 120.9,224.7 L 124.3,226.2 L 128.1,227.7 L 132.1,229.0 L 136.3,230.3 L 140.8,231.4 L 145.5,232.4 L 150.4,233.3 L 155.4,234.1 L 160.6,234.7 L 165.9,235.3 L 171.2,235.7 L 176.5,235.9 L 181.9,236.1 L 187.3,236.1 L 192.7,236.0 L 198.0,235.7 L 203.2,235.4 L 208.3,234.9 L 213.2,234.3 L 218.0,233.6 L 222.6,232.7 L 227.0,231.8 L 231.2,230.8 L 235.2,229.7 L 238.9,228.5 L 242.3,227.2 L 245.5,225.8 L 248.3,224.4 L 250.8,222.9 L 253.0,221.4 L 254.9,219.8 L 256.4,218.2 L 257.6,216.6 L 258.5,214.9 L 259.0,213.3 L 259.2,211.6 L 259.0,210.0 L 258.5,208.4 L 257.7,206.8 L 256.5,205.2 L 255.0,203.7 L 253.2,202.2 L 251.2,200.7 L 248.8,199.4 L 246.2,198.1 L 243.4,196.8 L 240.3,195.7 L 237.0,194.6 L 233.4,193.6 L 229.8,192.7 L 225.9,191.9 L 222.0,191.2 L 217.9,190.6 L 213.7,190.1 L 209.4,189.7 L 205.1,189.4 L 200.8,189.2 L 196.5,189.1 L 192.1,189.1 L 187.9,189.2 L 183.6,189.4 L 179.5,189.7 L 175.4,190.1 L 171.5,190.6 L 167.7,191.2 L 164.1,191.9 L 160.6,192.7 L 157.3,193.5 L 154.2,194.4 L 151.3,195.4 L 148.7,196.4 L 146.2,197.5 L 144.0,198.6 L 142.1,199.8 L 140.4,201.0 L 139.0,202.3 L 137.9,203.6 L 137.0,204.8 L 136.4,206.1 L 136.1,207.4 L 136.0,208.7 L 136.2,210.0 L 136.7,211.3 L 137.4,212.5 L 138.4,213.7 L 139.6,214.9 L 141.1,216.1 L 142.8,217.2 L 144.6,218.2 L 146.7,219.2 L 149.0,220.1 L 151.4,221.0 L 154.0,221.8 L 156.8,222.6 L 159.6,223.2 L 162.6,223.8 L 165.7,224.3 L 168.8,224.8 L 172.0,225.1 L 175.3,225.4 L 178.6,225.6 L 181.8,225.7 L 185.1,225.8 L 188.4,225.7 L 191.6,225.6 L 194.8,225.4 L 197.9,225.2 L 200.9,224.8 L 203.8,224.4 L 206.6,224.0 L 209.3,223.4 L 211.8,222.8 L 214.2,222.2 L 216.4,221.5 L 218.5,220.8 L 220.4,220.0 L 222.1,219.2 L 223.6,218.3 L 224.9,217.4 L 226.1,216.5 L 227.0,215.6 L 227.8,214.7 L 228.3,213.7 L 228.7,212.8 L 228.8,211.9 L 228.7,210.9 L 228.5,210.0 L 228.1,209.1 L 227.5,208.2 L 226.7,207.4 L 225.7,206.5 L 224.6,205.7 L 223.3,205.0 L 221.9,204.2 L 220.4,203.6 L 218.7,202.9 L 216.9,202.3 L 215.0,201.8 L 213.0,201.3 L 211.0,200.9 L 208.9,200.5 L 206.7,200.2 L 204.5,199.9 L 202.3,199.7 L 200.0,199.5 L 197.8,199.4 L 195.5,199.4 L 193.3,199.4 L 191.1,199.5 L 188.9,199.6 L 186.8,199.7 L 184.8,199.9 L 182.8,200.2 L 180.9,200.5 L 179.1,200.9 L 177.4,201.2 L 175.8,201.7 L 174.3,202.1 L 173.0,202.6 L 171.7,203.1 L 170.6,203.6 L 169.6,204.2 L 168.7,204.7 L 168.0,205.3 L 167.4,205.9 L 166.9,206.5 L 166.6,207.1 L 166.3,207.7 L 166.3,208.3 L 166.3,208.9 L 166.5,209.4 L 166.8,210.0 L 167.1,210.5 L 167.6,211.1 L 168.3,211.6 L 169.0,212.1 L 169.7,212.5 L 170.6,212.9 L 171.6,213.3 L 172.6,213.7 L 173.7,214.0 L 174.8,214.3 L 176.0,214.6 L 177.2,214.8 L 178.4,215.0 L 179.7,215.2 L 180.9,215.3 L 182.2,215.4 L 183.4,215.5 L 184.7,215.5 L 185.9,215.5 L 187.1,215.5 L 188.3,215.5 L 189.4,215.4 L 190.5,215.3 L 191.6,215.1 L 192.6,214.9 L 193.5,214.8 L 194.4,214.6 L 195.2,214.3 L 195.9,214.1 L 196.5,213.9 L 197.1,213.6 L 197.6,213.3 L 198.1,213.0 L 198.4,212.8 L 198.7,212.5 L 198.9,212.2 L 199.1,211.9 L 199.2,211.7 L 199.2,211.4 L 199.1,211.1 L 199.0,210.9 L 198.8,210.6 L 198.6,210.4 L 198.3,210.2 L 198.0,210.0\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"190\" cy=\"210\" r=\"3\" fill=\"#C9A227\"/><line x1=\"316\" y1=\"210\" x2=\"390\" y2=\"210\" stroke=\"#F2EEE4\" stroke-width=\"2.1\" stroke-linecap=\"round\"/><line x1=\"376\" y1=\"202\" x2=\"376\" y2=\"218\" stroke=\"#8B96A5\" stroke-width=\"1.4\"/><line x1=\"74.0\" y1=\"187.2\" x2=\"63.6\" y2=\"185.2\" stroke=\"#8B96A5\" stroke-width=\"1.4\"/><line x1=\"56.0\" y1=\"210.0\" x2=\"44.0\" y2=\"210.0\" stroke=\"#8B96A5\" stroke-width=\"1.4\"/><line x1=\"74.0\" y1=\"232.8\" x2=\"63.6\" y2=\"234.8\" stroke=\"#8B96A5\" stroke-width=\"1.4\"/>", "slides": [{"label": "How I Got Here", "type": "para", "text": "Introduced by a former manager."}, {"label": "What I Worked On", "type": "list", "items": ["Full product lifecycle ownership, from design and validation through testing, supply chain, and delivery", "Building onshored electric powertrains and motors for drones, robots, mobility, and data centers"]}, {"label": "Key Learnings", "type": "list", "items": ["Still early. This one's being written in real time."]}]}];
-
-const params = new URLSearchParams(window.location.search);
-let roleIndex = parseInt(params.get('role'), 10);
-if (isNaN(roleIndex) || !ROLES[roleIndex]) roleIndex = 0;
-
-const track = document.getElementById('detail-track');
-const backLink = document.getElementById('back-link');
-const progressLabel = document.getElementById('progress-label');
-
-backLink.href = `work.html#role-${roleIndex}`;
-
-let currentSlide = -1;
-
-function wrapIcon(inner) {
-  return `<svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
-}
-
-function renderMetrics(metrics) {
-  if (!metrics || !metrics.length) return '';
-  const items = metrics.map(([v,l]) => `<li><span class="metric">${v}</span>${l}</li>`).join('');
-  return `<ul class="role-metrics">${items}</ul>`;
-}
-
-function render() {
-  const r = ROLES[roleIndex];
-  progressLabel.textContent = `Role ${roleIndex+1} of ${ROLES.length}`;
-  track.innerHTML = '';
-
-  const cover = document.createElement('div');
-  cover.className = 'detail-slide detail-cover';
-  cover.dataset.slide = -1;
-  cover.innerHTML = `
-    <div class="detail-slide-inner">
-      <div class="role-icon">${wrapIcon(r.icon)}</div>
-      <span class="role-num">${r.num}</span>
-      <h1>${r.title}</h1>
-      <div class="role-meta">${r.role} &middot; ${r.company} &middot; ${r.dates}</div>
-      <p class="role-headline">${r.headline}</p>
-    </div>`;
-  track.appendChild(cover);
-
-  r.slides.forEach((s, i) => {
-    const el = document.createElement('div');
-    el.className = 'detail-slide detail-content';
-    el.dataset.slide = i;
-    let body = '';
-    if (s.type === 'para') {
-      body = `<p style="font-family:'Inter',sans-serif;font-weight:400;font-size:clamp(1.1rem,2.8vw,1.35rem);line-height:1.6;opacity:0.9;">${s.text}</p>`;
-    } else {
-      body = `<ul>${s.items.map(it => `<li>${it}</li>`).join('')}</ul>`;
-    }
-    el.innerHTML = `
-      <div class="detail-slide-inner">
-        <span class="role-block-label">${s.label}</span>
-        ${body}
-        ${i === r.slides.length - 1 ? renderMetrics(r.metrics) : ''}
-      </div>`;
-    track.appendChild(el);
-  });
-
-  const isLast = roleIndex === ROLES.length - 1;
-  const end = document.createElement('div');
-  end.className = 'detail-slide detail-end';
-  end.dataset.slide = r.slides.length;
-  end.innerHTML = `
-    <div class="detail-slide-inner">
-      <h2>${isLast ? "That's the full set, for now." : 'End of this one.'}</h2>
-      <div class="detail-end-actions">
-        <button class="end-btn" data-action="back">&larr; Back to Work</button>
-        ${!isLast ? '<button class="end-btn primary" data-action="next">Next role &rarr;</button>' : ''}
-      </div>
-    </div>`;
-  track.appendChild(end);
-
-  const prevArrow = document.createElement('button');
-  prevArrow.className = 'detail-nav-arrow prev'; prevArrow.innerHTML = '&lsaquo;';
-  prevArrow.addEventListener('click', () => go(-1));
-  track.appendChild(prevArrow);
-
-  const nextArrow = document.createElement('button');
-  nextArrow.className = 'detail-nav-arrow next'; nextArrow.innerHTML = '&rsaquo;';
-  nextArrow.addEventListener('click', () => go(1));
-  track.appendChild(nextArrow);
-
-  const leftZone = document.createElement('div');
-  leftZone.className = 'detail-nav-zone left';
-  leftZone.addEventListener('click', () => go(-1));
-  track.appendChild(leftZone);
-
-  const rightZone = document.createElement('div');
-  rightZone.className = 'detail-nav-zone right';
-  rightZone.addEventListener('click', () => go(1));
-  track.appendChild(rightZone);
-
-  const dots = document.createElement('div');
-  dots.className = 'detail-dots';
-  r.slides.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'dot'; d.dataset.dot = i;
-    dots.appendChild(d);
-  });
-  track.appendChild(dots);
-
-  track.querySelectorAll('[data-action]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const action = e.target.dataset.action;
-      if (action === 'back') window.location.href = `work.html#role-${roleIndex}`;
-      if (action === 'next') window.location.href = `role-detail.html?role=${roleIndex+1}`;
-    });
-  });
-
-  show();
-}
-
-function show() {
-  const r = ROLES[roleIndex];
-  const total = r.slides.length;
-  track.querySelectorAll('.detail-slide').forEach(s => {
-    s.classList.toggle('showing', parseInt(s.dataset.slide) === currentSlide);
-  });
-  track.querySelectorAll('.dot').forEach(d => {
-    d.classList.toggle('on', parseInt(d.dataset.dot) === currentSlide);
-  });
-  const prevArrow = track.querySelector('.detail-nav-arrow.prev');
-  const nextArrow = track.querySelector('.detail-nav-arrow.next');
-  prevArrow.classList.toggle('hidden-arrow', currentSlide === -1);
-  nextArrow.classList.toggle('hidden-arrow', currentSlide === total);
-}
-
-function go(dir) {
-  const r = ROLES[roleIndex];
-  const total = r.slides.length;
-  const next = currentSlide + dir;
-  if (next < -1 || next > total) return;
-  currentSlide = next;
-  show();
-}
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') go(1);
-  if (e.key === 'ArrowLeft') go(-1);
-  if (e.key === 'Escape') window.location.href = `work.html#role-${roleIndex}`;
-});
-
-render();
+var ROLES = [{"n": "I", "company": "Godrej &amp; Boyce Mfg Co Ltd", "role": "Assistant Manager", "dates": "Feb 2021 to Dec 2021", "loc": "Satara, Maharashtra", "summary": "Where I learned how a factory actually runs.", "icon": "<path d=\"M 340.0,210.0 L 339.3,201.0 L 338.1,192.0 L 336.2,183.2 L 333.7,174.5 L 330.6,166.1 L 326.9,158.0 L 322.7,150.1 L 317.9,142.5 L 312.7,135.4 L 307.0,128.6 L 300.8,122.3 L 294.3,116.4 L 287.3,111.0 L 280.0,106.2 L 272.5,101.8 L 264.6,98.0 L 256.5,94.8 L 248.3,92.2 L 239.9,90.1 L 231.4,88.6 L 222.8,87.8 L 214.3,87.5 L 205.7,87.9 L 197.3,88.8 L 188.9,90.3 L 180.7,92.4 L 172.7,95.1 L 164.9,98.3 L 157.3,102.0 L 150.1,106.2 L 143.2,110.9 L 136.6,116.1 L 130.5,121.7 L 124.8,127.7 L 119.5,134.1 L 114.7,140.8 L 110.4,147.8 L 106.6,155.0 L 103.3,162.5 L 100.6,170.2 L 98.4,178.0 L 96.8,185.9 L 95.7,193.9 L 95.2,202.0 L 95.2,210.0 L 95.9,218.0 L 97.0,225.9 L 98.8,233.6 L 101.0,241.3 L 103.8,248.7 L 107.0,255.8 L 110.8,262.8 L 115.0,269.4 L 119.6,275.7 L 124.7,281.6 L 130.1,287.1 L 135.9,292.3 L 142.1,297.0 L 148.5,301.2 L 155.2,305.0 L 162.1,308.3 L 169.2,311.1 L 176.4,313.3 L 183.8,315.1 L 191.3,316.3 L 198.7,317.0 L 206.3,317.2 L 213.7,316.9 L 221.1,316.0 L 228.5,314.7 L 235.6,312.8 L 242.6,310.4 L 249.4,307.6 L 256.0,304.3 L 262.3,300.6 L 268.3,296.4 L 274.0,291.9 L 279.3,287.0 L 284.3,281.7 L 288.8,276.1 L 293.0,270.3 L 296.7,264.2 L 299.9,257.8 L 302.8,251.3 L 305.1,244.6 L 306.9,237.8 L 308.3,230.9 L 309.2,223.9 L 309.6,217.0 L 309.5,210.0 L 308.9,203.1 L 307.9,196.2 L 306.3,189.5 L 304.3,182.9 L 301.9,176.5 L 299.0,170.4 L 295.8,164.4 L 292.1,158.7 L 288.0,153.3 L 283.6,148.2 L 278.9,143.5 L 273.9,139.1 L 268.5,135.1 L 263.0,131.4 L 257.2,128.2 L 251.2,125.4 L 245.1,123.1 L 238.9,121.2 L 232.5,119.7 L 226.1,118.7 L 219.7,118.1 L 213.2,118.0 L 206.8,118.4 L 200.4,119.1 L 194.2,120.4 L 188.1,122.0 L 182.1,124.1 L 176.3,126.5 L 170.7,129.4 L 165.3,132.6 L 160.2,136.2 L 155.4,140.1 L 150.9,144.4 L 146.7,148.9 L 142.9,153.7 L 139.4,158.7 L 136.3,163.9 L 133.5,169.3 L 131.2,174.9 L 129.2,180.6 L 127.7,186.4 L 126.6,192.3 L 125.9,198.2 L 125.6,204.1 L 125.8,210.0 L 126.3,215.9 L 127.2,221.6 L 128.6,227.3 L 130.3,232.8 L 132.4,238.2 L 134.9,243.4 L 137.7,248.4 L 140.9,253.2 L 144.3,257.7 L 148.1,262.0 L 152.1,265.9 L 156.3,269.6 L 160.8,272.9 L 165.5,275.9 L 170.4,278.6 L 175.4,280.8 L 180.6,282.8 L 185.9,284.3 L 191.2,285.5 L 196.5,286.3 L 201.9,286.7 L 207.3,286.7 L 212.7,286.4 L 218.0,285.7 L 223.2,284.6 L 228.3,283.2 L 233.2,281.4 L 238.0,279.3 L 242.6,276.9 L 247.0,274.2 L 251.2,271.1 L 255.2,267.8 L 258.9,264.3 L 262.3,260.5 L 265.5,256.5 L 268.3,252.3 L 270.8,248.0 L 273.0,243.5 L 274.9,238.9 L 276.4,234.2 L 277.6,229.4 L 278.5,224.6 L 279.0,219.7 L 279.2,214.8 L 279.0,210.0 L 278.5,205.2 L 277.7,200.5 L 276.5,195.9 L 275.0,191.4 L 273.2,187.0 L 271.2,182.8 L 268.8,178.7 L 266.2,174.9 L 263.4,171.2 L 260.3,167.8 L 257.0,164.7 L 253.4,161.7 L 249.8,159.1 L 245.9,156.7 L 242.0,154.6 L 237.9,152.9 L 233.7,151.4 L 229.4,150.2 L 225.1,149.3 L 220.8,148.7 L 216.5,148.5 L 212.1,148.5 L 207.9,148.8 L 203.6,149.5 L 199.5,150.4 L 195.4,151.6 L 191.5,153.1 L 187.7,154.8 L 184.1,156.8 L 180.6,159.0 L 177.3,161.5 L 174.2,164.2 L 171.3,167.0 L 168.7,170.1 L 166.2,173.3 L 164.0,176.6 L 162.1,180.1 L 160.4,183.7 L 159.0,187.3 L 157.9,191.0 L 157.0,194.8 L 156.4,198.6 L 156.1,202.4 L 156.0,206.2 L 156.2,210.0 L 156.7,213.7 L 157.4,217.4 L 158.4,221.0 L 159.6,224.4 L 161.1,227.8 L 162.8,231.0 L 164.6,234.1 L 166.7,237.0 L 169.0,239.8 L 171.4,242.4 L 174.0,244.7 L 176.8,246.9 L 179.6,248.9 L 182.6,250.6 L 185.7,252.1 L 188.8,253.4 L 192.0,254.5 L 195.3,255.3 L 198.6,255.9 L 201.8,256.3 L 205.1,256.4 L 208.4,256.3 L 211.6,255.9 L 214.8,255.4 L 217.9,254.6 L 220.9,253.6 L 223.8,252.4 L 226.6,251.0 L 229.3,249.5 L 231.8,247.7 L 234.2,245.9 L 236.4,243.8 L 238.5,241.6 L 240.4,239.3 L 242.1,236.9 L 243.6,234.4 L 244.9,231.8 L 246.1,229.2 L 247.0,226.5 L 247.8,223.7 L 248.3,221.0 L 248.7,218.2 L 248.8,215.5 L 248.7,212.7 L 248.5,210.0 L 248.1,207.3 L 247.5,204.7 L 246.7,202.2 L 245.7,199.8 L 244.6,197.4 L 243.3,195.2 L 241.9,193.0 L 240.4,191.0 L 238.7,189.2 L 236.9,187.4 L 235.0,185.8 L 233.0,184.4 L 231.0,183.1 L 228.9,182.0 L 226.7,181.1 L 224.5,180.3 L 222.3,179.6 L 220.0,179.2 L 217.8,178.9 L 215.5,178.8 L 213.3,178.8 L 211.1,179.0 L 208.9,179.3 L 206.8,179.8 L 204.8,180.4 L 202.8,181.2 L 200.9,182.1 L 199.1,183.1 L 197.4,184.2 L 195.8,185.5 L 194.3,186.8 L 193.0,188.2 L 191.7,189.7 L 190.6,191.3 L 189.6,192.9 L 188.7,194.5 L 188.0,196.2 L 187.4,198.0 L 186.9,199.7 L 186.6,201.5 L 186.3,203.2 L 186.3,205.0 L 186.3,206.7 L 186.5,208.4 L 186.8,210.0 L 187.1,211.6 L 187.6,213.1 L 188.3,214.6 L 189.0,216.0 L 189.7,217.4 L 190.6,218.6 L 191.6,219.8 L 192.6,220.9 L 193.7,221.9 L 194.8,222.8 L 196.0,223.6 L 197.2,224.3 L 198.4,224.8 L 199.7,225.3 L 200.9,225.7 L 202.2,226.0 L 203.4,226.2 L 204.7,226.3 L 205.9,226.3 L 207.1,226.2 L 208.3,226.0 L 209.4,225.8 L 210.5,225.4 L 211.6,225.0 L 212.6,224.6 L 213.5,224.0 L 214.4,223.4 L 215.2,222.8 L 215.9,222.1 L 216.5,221.3 L 217.1,220.6 L 217.6,219.8 L 218.1,219.0 L 218.4,218.1 L 218.7,217.3 L 218.9,216.5 L 219.1,215.7 L 219.2,214.9 L 219.2,214.1 L 219.1,213.3 L 219.0,212.6 L 218.8,211.9 L 218.6,211.2 L 218.3,210.6 L 218.0,210.0\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><circle cx=\"210\" cy=\"210\" r=\"4\" fill=\"#C9A227\"/>", "beats": [{"h": "How I got here", "p": ["I put everything into my Formula Student team in college. When placement season came round, I didn't land a job.", "I had interviewed at Godrej that same semester. An aptitude test I barely scraped through, then an essay round where I wrote a page arguing that working in a corporation is a lot like being a politician. I had no work experience at all at that point, so it was more instinct than insight. I got waitlisted.", "Then the lockdown hit and I stopped thinking about jobs altogether. In December, mid-pandemic, Godrej called. Every friend I had was already working by then. I said yes partly because of that."]}, {"h": "What I walked into", "p": ["Lawkim Motors, as a production engineer in the stamping shop. Daily planning across ten-plus stator and rotor categories, three supervisors and a hundred-odd workmen on the floor, and vendors to call when in-house capacity ran out.", "Our daily production meetings weren't really meetings. They were shouting matches. Nobody was trying to fix the problem; everybody wanted a number by end of day.", "Then the second COVID wave came and the company built a bio-bubble. People living on site, working through it for weeks."]}, {"h": "What I learned", "p": ["How to plan real capacity against real demand, rather than against a forecast someone handed me.", "That you can make a sound decision without deep technical expertise, as long as you gather the right inputs and are willing to own the call. I proved that to myself sourcing a laser welding machine for an export customer, sitting across from suppliers in Gujarat and asking questions I wasn't qualified to fully judge.", "And that credibility with people twenty years more experienced comes from being useful, not from where you sit on the org chart."]}, {"h": "Where I fell short", "p": ["I was twenty-two and I burned out. I didn't have the language then to explain that to anyone, so I left after eleven months.", "The floor, the people, even the shouting, I'd take all of that again. How I left is the part I'd do differently."]}]}, {"n": "II", "company": "Exponent Energy", "role": "Fulfilment, Sourcing, Program Manager", "dates": "May 2022 to Dec 2023", "loc": "Bengaluru, Karnataka", "summary": "Joined early, built battery packs by hand, and worked up into sourcing and program management.", "icon": "<path d=\"M 124,80 H 296 A 14,14 0 0 1 310,94 V 326 A 14,14 0 0 1 296,340 H 124 A 14,14 0 0 1 110,326 V 94 A 14,14 0 0 1 124,80 Z\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"143.3\" y1=\"96\" x2=\"143.3\" y2=\"324\" stroke=\"#F2EEE4\" stroke-width=\"0.85\" opacity=\"0.55\"/><line x1=\"176.7\" y1=\"96\" x2=\"176.7\" y2=\"324\" stroke=\"#F2EEE4\" stroke-width=\"0.85\" opacity=\"0.55\"/><line x1=\"210.0\" y1=\"96\" x2=\"210.0\" y2=\"324\" stroke=\"#F2EEE4\" stroke-width=\"0.85\" opacity=\"0.55\"/><line x1=\"243.3\" y1=\"96\" x2=\"243.3\" y2=\"324\" stroke=\"#F2EEE4\" stroke-width=\"0.85\" opacity=\"0.55\"/><line x1=\"276.7\" y1=\"96\" x2=\"276.7\" y2=\"324\" stroke=\"#F2EEE4\" stroke-width=\"0.85\" opacity=\"0.55\"/><rect x=\"196\" y=\"66\" width=\"28\" height=\"14\" rx=\"2\" fill=\"none\" stroke=\"#C9A227\" stroke-width=\"1.4\"/>", "beats": [{"h": "How I got here", "p": ["After Godrej I locked myself in a room for about a month. I went back to CAT prep, bought the classes, and couldn't make myself open them.", "A friend from my Formula Student team was at Exponent in Bengaluru and put my name in. The first interview was a flop. The founder told my friend afterwards that I wasn't who he was looking for. My friend pushed back, vouched for me, and got me a second call.", "I got in on his word, not on my interview."]}, {"h": "What I walked into", "p": ["An early-stage company and no defined role. For the first couple of months I built battery packs by hand, some of the first twenty Exponent ever shipped.", "From there into fulfilment across states, then sourcing, then program management. Nobody planned that path. It just kept being the next useful thing."]}, {"h": "What I learned", "p": ["That sourcing is a partnership problem, not a procurement problem. Chasing individual parts doesn't scale. Building suppliers who absorb the complexity does.", "That early-stage companies need process before they need more people. Most of what I changed came from structure, not headcount.", "And that carrying context nobody else has is its own kind of leverage. When I came back two years later, knowing why things were built the way they were mattered more than any onboarding could have."]}, {"h": "Where I fell short", "p": ["I moved from Pune to Bengaluru, the first time I'd worked in another state. With local vendors there was a language barrier, and I was hesitant to reach out because of it. That cost me time before I widened my circle.", "Internally it was harder. People had come from big institutes with strong backgrounds, and the conversations they were having didn't sound like mine. I spent a lot of that first stint feeling far behind.", "On sourcing I got things wrong more than once. Wrong vendor for the wrong part, and communication I handled badly. It improved day by day, but it improved because I kept getting it wrong first."]}]}, {"n": "III", "company": "Brane Group", "role": "Program Manager", "dates": "Jan 2024 to Sep 2024", "loc": "Bengaluru, Karnataka", "summary": "Running releases for forty customers, in a language I had to learn first.", "icon": "<circle cx=\"210\" cy=\"210\" r=\"145\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\"/><line x1=\"210.0\" y1=\"81.0\" x2=\"210.0\" y2=\"67.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"339.0\" y1=\"210.0\" x2=\"353.0\" y2=\"210.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"210.0\" y1=\"339.0\" x2=\"210.0\" y2=\"353.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"81.0\" y1=\"210.0\" x2=\"67.0\" y2=\"210.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><line x1=\"210\" y1=\"210\" x2=\"151.0\" y2=\"168.7\" stroke=\"#F2EEE4\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"210\" y1=\"210\" x2=\"303.5\" y2=\"156.0\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><circle cx=\"210\" cy=\"210\" r=\"4\" fill=\"#C9A227\"/>", "beats": [{"h": "How I got here", "p": ["I wanted to be closer to family, which meant remote had to come before the company or the title. I got in touch with the CTO there.", "The interview is still the best I've had. No table, nobody firing questions in turn. Four or five people around a room, everyone holding a marker, questions coming from all sides. I ended up at the whiteboard sketching out field processes to show how I actually think. They worked out that I understood process even though I'd never touched software, and that was enough."]}, {"h": "What I walked into", "p": ["Release management for a low-code platform used by forty-plus customers, inside a four-hundred-person engineering organisation.", "Fixed scope, fixed team, fixed timeline, with none of the three open to renegotiation. Sprints on some projects, Scrum on others, tracked through an internal ticketing tool."]}, {"h": "What I learned", "p": ["The thing I actually took from that year has nothing to do with release cycles. It's this: a program manager needs enough technical context to cross-question properly.", "Without it you can't tell when an estimate is padded, you can't push back on a dependency, and you can't get the best out of either side of a handoff. You end up relaying messages instead of managing a program.", "I also picked up something less concrete from the program management lead there. Circle of concern, spending energy only where you actually have leverage, and empathy as a working tool rather than a soft one."]}, {"h": "Where I fell short", "p": ["It took me a couple of months to understand software terminology and the development lifecycle well enough to be useful. For that period I was carrying meetings rather than contributing to them.", "The bigger one is the decision to be there at all. Leaving Exponent when I did added volatility to a career that didn't need any.", "Nine months in, the company hit trouble and layoffs started. I wasn't one of them, but it was enough to make me step back anyway."]}]}, {"n": "IV", "company": "Exponent Energy", "role": "Network Initiatives &amp; Partnerships", "dates": "Sep 2024 to Sep 2025", "loc": "Bengaluru, Karnataka", "summary": "Partnerships, P&amp;L, and a charging network heading past two hundred stations.", "icon": "<line x1=\"95\" y1=\"320\" x2=\"180\" y2=\"270\" stroke=\"#F2EEE4\" stroke-width=\"1.5\" opacity=\"0.85\"/><line x1=\"180\" y1=\"270\" x2=\"260\" y2=\"205\" stroke=\"#F2EEE4\" stroke-width=\"1.5\" opacity=\"0.85\"/><line x1=\"260\" y1=\"205\" x2=\"325\" y2=\"130\" stroke=\"#F2EEE4\" stroke-width=\"1.5\" opacity=\"0.85\"/><line x1=\"343\" y1=\"112\" x2=\"370\" y2=\"85\" stroke=\"#8B96A5\" stroke-width=\"1.25\" stroke-dasharray=\"1 6\" stroke-linecap=\"round\"/><circle cx=\"95\" cy=\"320\" r=\"9\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\"/><circle cx=\"180\" cy=\"270\" r=\"13\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\"/><circle cx=\"260\" cy=\"205\" r=\"18\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\"/><circle cx=\"325\" cy=\"130\" r=\"24\" fill=\"#C9A227\" stroke=\"#C9A227\" stroke-width=\"1.75\"/>", "beats": [{"h": "How I got here", "p": ["I got back in touch with one of the co-founders, and he offered me a way back in. He didn't ask why I'd left.", "The choice was program management or business. I chose business because I'd never done it."]}, {"h": "What I walked into", "p": ["Charging network partnerships, at a company that had grown from around sixty people to three hundred and fifty since I first joined.", "P&amp;L and utilisation for the network, regulatory conversations with state electricity boards, four operational systems that didn't exist yet, and a network heading past two hundred stations."]}, {"h": "What I learned", "p": ["How to read a P&amp;L well enough to make a partnership call rather than just support one.", "That process instincts travel. I kept getting pulled back into program work even while formally sitting on the business team, because that's what I reach for.", "And from working close to the founders, how to be on point without over-explaining. Say the thing, don't pad it."]}, {"h": "Where I fell short", "p": ["This was the first time I'd worked anything resembling sales, and I didn't have the fundamentals. I couldn't generate leads the way the role needed, and it took me a long time to get any traction.", "Because I had context, I got moved back toward product and program work, which was useful for the company and confusing for me.", "The org was restructuring as it scaled, I wanted a broader view than the role gave me, and I spent a lot of that year unsure where I actually fit."]}]}, {"n": "V", "company": "Conifer", "role": "Program Manager", "dates": "Oct 2025 to Present", "loc": "Pune, Maharashtra", "summary": "Current. Product lifecycle for rare-earth-free axial flux powertrains.", "icon": "<path d=\"M 320.0,210.0 L 319.3,206.9 L 318.1,203.9 L 316.2,200.9 L 313.7,197.9 L 310.6,195.1 L 306.9,192.3 L 302.7,189.6 L 297.9,187.1 L 292.7,184.6 L 287.0,182.3 L 280.8,180.2 L 274.3,178.2 L 267.3,176.4 L 260.0,174.7 L 252.5,173.2 L 244.6,171.9 L 236.5,170.8 L 228.3,169.9 L 219.9,169.2 L 211.4,168.7 L 202.8,168.4 L 194.3,168.4 L 185.7,168.5 L 177.3,168.8 L 168.9,169.3 L 160.7,170.0 L 152.7,170.9 L 144.9,172.0 L 137.3,173.3 L 130.1,174.7 L 123.2,176.3 L 116.6,178.1 L 110.5,180.0 L 104.8,182.0 L 99.5,184.2 L 94.7,186.5 L 90.4,188.8 L 86.6,191.3 L 83.3,193.8 L 80.6,196.5 L 78.4,199.1 L 76.8,201.8 L 75.7,204.5 L 75.2,207.3 L 75.2,210.0 L 75.9,212.7 L 77.0,215.4 L 78.8,218.0 L 81.0,220.6 L 83.8,223.1 L 87.0,225.6 L 90.8,227.9 L 95.0,230.2 L 99.6,232.3 L 104.7,234.3 L 110.1,236.2 L 115.9,238.0 L 122.1,239.6 L 128.5,241.0 L 135.2,242.3 L 142.1,243.4 L 149.2,244.4 L 156.4,245.1 L 163.8,245.7 L 171.3,246.2 L 178.7,246.4 L 186.3,246.5 L 193.7,246.3 L 201.1,246.1 L 208.5,245.6 L 215.6,244.9 L 222.6,244.1 L 229.4,243.2 L 236.0,242.1 L 242.3,240.8 L 248.3,239.4 L 254.0,237.8 L 259.3,236.2 L 264.3,234.4 L 268.8,232.5 L 273.0,230.5 L 276.7,228.4 L 279.9,226.3 L 282.8,224.0 L 285.1,221.8 L 286.9,219.5 L 288.3,217.1 L 289.2,214.7 L 289.6,212.4 L 289.5,210.0 L 288.9,207.6 L 287.9,205.3 L 286.3,203.0 L 284.3,200.8 L 281.9,198.6 L 279.0,196.5 L 275.8,194.5 L 272.1,192.6 L 268.0,190.7 L 263.6,189.0 L 258.9,187.4 L 253.9,185.9 L 248.5,184.5 L 243.0,183.3 L 237.2,182.2 L 231.2,181.3 L 225.1,180.4 L 218.9,179.8 L 212.5,179.3 L 206.1,179.0 L 199.7,178.8 L 193.2,178.7 L 186.8,178.8 L 180.4,179.1 L 174.2,179.5 L 168.1,180.1 L 162.1,180.8 L 156.3,181.6 L 150.7,182.6 L 145.3,183.7 L 140.2,184.9 L 135.4,186.2 L 130.9,187.7 L 126.7,189.2 L 122.9,190.8 L 119.4,192.6 L 116.3,194.3 L 113.5,196.2 L 111.2,198.1 L 109.2,200.0 L 107.7,202.0 L 106.6,204.0 L 105.9,206.0 L 105.6,208.0 L 105.8,210.0 L 106.3,212.0 L 107.2,214.0 L 108.6,215.9 L 110.3,217.8 L 112.4,219.6 L 114.9,221.4 L 117.7,223.1 L 120.9,224.7 L 124.3,226.2 L 128.1,227.7 L 132.1,229.0 L 136.3,230.3 L 140.8,231.4 L 145.5,232.4 L 150.4,233.3 L 155.4,234.1 L 160.6,234.7 L 165.9,235.3 L 171.2,235.7 L 176.5,235.9 L 181.9,236.1 L 187.3,236.1 L 192.7,236.0 L 198.0,235.7 L 203.2,235.4 L 208.3,234.9 L 213.2,234.3 L 218.0,233.6 L 222.6,232.7 L 227.0,231.8 L 231.2,230.8 L 235.2,229.7 L 238.9,228.5 L 242.3,227.2 L 245.5,225.8 L 248.3,224.4 L 250.8,222.9 L 253.0,221.4 L 254.9,219.8 L 256.4,218.2 L 257.6,216.6 L 258.5,214.9 L 259.0,213.3 L 259.2,211.6 L 259.0,210.0 L 258.5,208.4 L 257.7,206.8 L 256.5,205.2 L 255.0,203.7 L 253.2,202.2 L 251.2,200.7 L 248.8,199.4 L 246.2,198.1 L 243.4,196.8 L 240.3,195.7 L 237.0,194.6 L 233.4,193.6 L 229.8,192.7 L 225.9,191.9 L 222.0,191.2 L 217.9,190.6 L 213.7,190.1 L 209.4,189.7 L 205.1,189.4 L 200.8,189.2 L 196.5,189.1 L 192.1,189.1 L 187.9,189.2 L 183.6,189.4 L 179.5,189.7 L 175.4,190.1 L 171.5,190.6 L 167.7,191.2 L 164.1,191.9 L 160.6,192.7 L 157.3,193.5 L 154.2,194.4 L 151.3,195.4 L 148.7,196.4 L 146.2,197.5 L 144.0,198.6 L 142.1,199.8 L 140.4,201.0 L 139.0,202.3 L 137.9,203.6 L 137.0,204.8 L 136.4,206.1 L 136.1,207.4 L 136.0,208.7 L 136.2,210.0 L 136.7,211.3 L 137.4,212.5 L 138.4,213.7 L 139.6,214.9 L 141.1,216.1 L 142.8,217.2 L 144.6,218.2 L 146.7,219.2 L 149.0,220.1 L 151.4,221.0 L 154.0,221.8 L 156.8,222.6 L 159.6,223.2 L 162.6,223.8 L 165.7,224.3 L 168.8,224.8 L 172.0,225.1 L 175.3,225.4 L 178.6,225.6 L 181.8,225.7 L 185.1,225.8 L 188.4,225.7 L 191.6,225.6 L 194.8,225.4 L 197.9,225.2 L 200.9,224.8 L 203.8,224.4 L 206.6,224.0 L 209.3,223.4 L 211.8,222.8 L 214.2,222.2 L 216.4,221.5 L 218.5,220.8 L 220.4,220.0 L 222.1,219.2 L 223.6,218.3 L 224.9,217.4 L 226.1,216.5 L 227.0,215.6 L 227.8,214.7 L 228.3,213.7 L 228.7,212.8 L 228.8,211.9 L 228.7,210.9 L 228.5,210.0 L 228.1,209.1 L 227.5,208.2 L 226.7,207.4 L 225.7,206.5 L 224.6,205.7 L 223.3,205.0 L 221.9,204.2 L 220.4,203.6 L 218.7,202.9 L 216.9,202.3 L 215.0,201.8 L 213.0,201.3 L 211.0,200.9 L 208.9,200.5 L 206.7,200.2 L 204.5,199.9 L 202.3,199.7 L 200.0,199.5 L 197.8,199.4 L 195.5,199.4 L 193.3,199.4 L 191.1,199.5 L 188.9,199.6 L 186.8,199.7 L 184.8,199.9 L 182.8,200.2 L 180.9,200.5 L 179.1,200.9 L 177.4,201.2 L 175.8,201.7 L 174.3,202.1 L 173.0,202.6 L 171.7,203.1 L 170.6,203.6 L 169.6,204.2 L 168.7,204.7 L 168.0,205.3 L 167.4,205.9 L 166.9,206.5 L 166.6,207.1 L 166.3,207.7 L 166.3,208.3 L 166.3,208.9 L 166.5,209.4 L 166.8,210.0 L 167.1,210.5 L 167.6,211.1 L 168.3,211.6 L 169.0,212.1 L 169.7,212.5 L 170.6,212.9 L 171.6,213.3 L 172.6,213.7 L 173.7,214.0 L 174.8,214.3 L 176.0,214.6 L 177.2,214.8 L 178.4,215.0 L 179.7,215.2 L 180.9,215.3 L 182.2,215.4 L 183.4,215.5 L 184.7,215.5 L 185.9,215.5 L 187.1,215.5 L 188.3,215.5 L 189.4,215.4 L 190.5,215.3 L 191.6,215.1 L 192.6,214.9 L 193.5,214.8 L 194.4,214.6 L 195.2,214.3 L 195.9,214.1 L 196.5,213.9 L 197.1,213.6 L 197.6,213.3 L 198.1,213.0 L 198.4,212.8 L 198.7,212.5 L 198.9,212.2 L 199.1,211.9 L 199.2,211.7 L 199.2,211.4 L 199.1,211.1 L 199.0,210.9 L 198.8,210.6 L 198.6,210.4 L 198.3,210.2 L 198.0,210.0\" fill=\"none\" stroke=\"#F2EEE4\" stroke-width=\"1.75\" stroke-linecap=\"round\"/><circle cx=\"190\" cy=\"210\" r=\"4\" fill=\"#C9A227\"/><line x1=\"316\" y1=\"210\" x2=\"390\" y2=\"210\" stroke=\"#F2EEE4\" stroke-width=\"2\" stroke-linecap=\"round\"/>", "beats": [{"h": "How I got here", "p": ["An introduction from a former manager."]}, {"h": "What I walked into", "p": ["An early-stage company building rare-earth-free axial flux powertrains and onshoring electric motor manufacturing in the US.", "I own the product lifecycle for motors and inverters, covering design, validation, testing, supply chain and delivery. I also run the programs behind application engineering, translating customer requirements into internal plans and resourcing."]}, {"h": "What I learned", "p": ["Too early to say properly. What's clear so far is how different the constraints are when the manufacturing is being stood up around the product, rather than the other way round."]}, {"h": "Where I fell short", "p": ["Still open. I'm in it, still learning, still getting things wrong.", "Ask me in a year."]}]}];
+var p = new URLSearchParams(window.location.search);
+var i = parseInt(p.get('role'),10);
+if (isNaN(i) || !ROLES[i]) i = 0;
+var r = ROLES[i];
+document.title = r.company.replace(/&amp;/g,'&') + ' \u00b7 Prabhanjan Shelke';
+document.getElementById('left').innerHTML =
+  '<div class="ico"><svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">'+r.icon+'</svg></div>'
+  +'<span class="num">'+r.n+'</span><h1>'+r.company+'</h1>'
+  +'<div class="meta">'+r.role+'<br>'+r.dates+(r.loc?' \u00b7 '+r.loc:'')+'</div>'
+  +'<p class="sum">'+r.summary+'</p>';
+document.getElementById('right').innerHTML = r.beats.map(function(b){
+  return '<div class="beat"><span class="h">'+b.h+'</span>'
+       + b.p.map(function(x){return '<p>'+x+'</p>';}).join('') + '</div>';
+}).join('');
+var nv='';
+nv += (i>0) ? '<a href="role-detail.html?role='+(i-1)+'">\u2190 '+ROLES[i-1].company+'</a>' : '<span></span>';
+if(i<ROLES.length-1) nv += '<a href="role-detail.html?role='+(i+1)+'">'+ROLES[i+1].company+' \u2192</a>';
+document.getElementById('rolenav').innerHTML = nv;
 </script>
-
+<script>
+(function(){var b=document.getElementById('nav-toggle'),m=document.getElementById('navlinks');
+if(!b||!m)return;b.addEventListener('click',function(){var o=m.classList.toggle('open');
+b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});})();
+</script>
 </body>
 </html>
